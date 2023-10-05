@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Pulp Fiction",
+    "duration": "2hr34m",
+    "genre": "Crime, Drama",
+    "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "rating": "8.9",
+    "showtimes": "2:30pm, 5:45pm, 9:00pm",
+    "cast": "John Travolta, Samuel L. Jackson, Uma Thurman",
+    "director": "Quentin Tarantino",
+    "price": "$12.99",
+    "IsPlaying": true
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "duration": "2hr22m",
+    "genre": "Drama",
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "rating": "9.3",
+    "showtimes": "1:30pm, 4:45pm, 8:15pm",
+    "cast": "Tim Robbins, Morgan Freeman, Bob Gunton",
+    "director": "Frank Darabont",
+    "price": "$12.50",
+    "IsPlaying": true
+  },
+  {
+    "title": "The Godfather",
+    "duration": "2hr55m",
+    "genre": "Crime, Drama",
+    "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "rating": "9.2",
+    "showtimes": "3:00pm, 7:00pm",
+    "cast": "Marlon Brando, Al Pacino, James Caan",
+    "director": "Francis Ford Coppola",
+    "price": "$13.50",
+    "IsPlaying": true
+  },
+  {
+    "title": "Inception",
+    "duration": "2hr28m",
+    "genre": "Action, Sci-Fi, Thriller",
+    "description": "A thief who enters the dreams of others to steal ideas takes on the ultimate job.",
+    "rating": "8.8",
+    "showtimes": "2:45pm, 6:15pm, 9:45pm",
+    "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
+    "director": "Christopher Nolan",
+    "price": "$12.99",
+    "IsPlaying": true
+  },
+  {
+    "title": "Forrest Gump",
+    "duration": "2hr22m",
+    "genre": "Drama, Romance",
+    "description": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75.",
+    "rating": "8.8",
+    "showtimes": "2:00pm, 5:30pm, 8:30pm",
+    "cast": "Tom Hanks, Robin Wright, Gary Sinise",
+    "director": "Robert Zemeckis",
+    "price": "$12.50",
+    "IsPlaying": true
+  },
+  {
+    "title": "Titanic",
+    "duration": "3hr15m",
+    "genre": "Drama, Romance",
+    "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+    "rating": "7.8",
+    "showtimes": "1:00pm, 4:45pm, 8:30pm",
+    "cast": "Leonardo DiCaprio, Kate Winslet, Billy Zane",
+    "director": "James Cameron",
+    "price": "$13.00",
+    "IsPlaying": true
+  },
+  {
+    "title": "Jurassic Park",
+    "duration": "2hr7m",
+    "genre": "Action, Adventure, Sci-Fi",
+    "description": "A pragmatic paleontologist visiting an almost complete theme park is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.",
+    "rating": "8.1",
+    "showtimes": "3:15pm, 6:30pm, 9:15pm",
+    "cast": "Sam Neill, Laura Dern, Jeff Goldblum",
+    "director": "Steven Spielberg",
+    "price": "$12.75",
+    "IsPlaying": true
+  },
+  {
+    "title": "The Dark Knight",
+    "duration": "2hr32m",
+    "genre": "Action, Crime, Drama",
+    "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+    "rating": "9.0",
+    "showtimes": "3:45pm, 7:30pm, 10:15pm",
+    "cast": "Christian Bale, Heath Ledger, Aaron Eckhart",
+    "director": "Christopher Nolan",
+    "price": "$13.25",
+    "IsPlaying": true
+  },
+  {
+    "title": "The Matrix",
+    "duration": "2hr16m",
+    "genre": "Action, Sci-Fi",
+    "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "rating": "8.7",
+    "showtimes": "4:00pm, 7:00pm, 10:00pm",
+    "cast": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "price": "$12.90",
+    "IsPlaying": true
+  }
+]
