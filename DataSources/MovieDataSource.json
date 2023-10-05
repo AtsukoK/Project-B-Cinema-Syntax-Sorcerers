@@ -8,7 +8,7 @@
     "showtimes": "2:30pm, 5:45pm, 9:00pm",
     "cast": "John Travolta, Samuel L. Jackson, Uma Thurman",
     "director": "Quentin Tarantino",
-    "price": "$12.99",
+    "price": 12.99,
     "IsPlaying": true
   },
   {
@@ -20,7 +20,7 @@
     "showtimes": "1:30pm, 4:45pm, 8:15pm",
     "cast": "Tim Robbins, Morgan Freeman, Bob Gunton",
     "director": "Frank Darabont",
-    "price": "$12.50",
+    "price": 12.5,
     "IsPlaying": true
   },
   {
@@ -32,7 +32,7 @@
     "showtimes": "3:00pm, 7:00pm",
     "cast": "Marlon Brando, Al Pacino, James Caan",
     "director": "Francis Ford Coppola",
-    "price": "$13.50",
+    "price": 13.5,
     "IsPlaying": true
   },
   {
@@ -44,7 +44,7 @@
     "showtimes": "2:45pm, 6:15pm, 9:45pm",
     "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
     "director": "Christopher Nolan",
-    "price": "$12.99",
+    "price": 12.99,
     "IsPlaying": true
   },
   {
@@ -56,7 +56,7 @@
     "showtimes": "2:00pm, 5:30pm, 8:30pm",
     "cast": "Tom Hanks, Robin Wright, Gary Sinise",
     "director": "Robert Zemeckis",
-    "price": "$12.50",
+    "price": 12.5,
     "IsPlaying": true
   },
   {
@@ -68,7 +68,7 @@
     "showtimes": "1:00pm, 4:45pm, 8:30pm",
     "cast": "Leonardo DiCaprio, Kate Winslet, Billy Zane",
     "director": "James Cameron",
-    "price": "$13.00",
+    "price": 13.0,
     "IsPlaying": true
   },
   {
@@ -80,7 +80,7 @@
     "showtimes": "3:15pm, 6:30pm, 9:15pm",
     "cast": "Sam Neill, Laura Dern, Jeff Goldblum",
     "director": "Steven Spielberg",
-    "price": "$12.75",
+    "price": 12.75,
     "IsPlaying": true
   },
   {
@@ -92,7 +92,7 @@
     "showtimes": "3:45pm, 7:30pm, 10:15pm",
     "cast": "Christian Bale, Heath Ledger, Aaron Eckhart",
     "director": "Christopher Nolan",
-    "price": "$13.25",
+    "price": 13.25,
     "IsPlaying": true
   },
   {
@@ -104,7 +104,7 @@
     "showtimes": "4:00pm, 7:00pm, 10:00pm",
     "cast": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
     "director": "Lana Wachowski, Lilly Wachowski",
-    "price": "$12.90",
+    "price": 12.9,
     "IsPlaying": true
   }
 ]
