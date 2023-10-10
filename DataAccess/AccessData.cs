@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 namespace DataAccess
 {
-    public class AccessPersonData
+    public class AccessData
     {
         public static List<Person> ReadPersonJson()
         {

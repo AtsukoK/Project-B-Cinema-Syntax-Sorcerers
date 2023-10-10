@@ -13,6 +13,12 @@ class Program
         Console.WriteLine(" ( 2/  Create account)\n");
 
         Console.WriteLine("You have chosen 1;");
-        UserCreation.CreateUser();
+        // UserCreation.CreateUser();
+        List<Movie> MovieList = AccessData.ReadMoviesJson();
+        foreach (Movie movie in MovieList)
+        {
+            Console.WriteLine(movie.Title);
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace Logic
             Person person = new Person(
                 email, name, password, false, reservations: new List<CheckOutObj>()
             );
-            List<Person> PersonList = AccessPersonData.ReadPersonJson(); //READ AND CREATE LIST OF ALL JSON DATA OF PERSONS
+            List<Person> PersonList = AccessData.ReadPersonJson(); //READ AND CREATE LIST OF ALL JSON DATA OF PERSONS
             PersonList.Add(person);
 
             Console.WriteLine(PersonList);
