@@ -1,4 +1,7 @@
-﻿public class Menu
+﻿using DataAccess;
+
+public class Menu
+
 {
     public static void DisplayMenu()
     {
@@ -29,6 +32,7 @@
             Console.WriteLine("3. Administrator mode");
             Console.WriteLine("4. Exit\n");
 
+            
             string choice = Console.ReadLine()!;
 
 
@@ -36,8 +40,18 @@
             {
                 case "1":
                     Console.WriteLine("Movie Listings:");
+                    List<Movie> movies = AccessData.ReadMoviesJson(); 
+                    MovieListing.DisplayMovies(movies);
 
-                    // Logic moet nog toegevoegd worden
+                    Console.WriteLine("\nSelect a movie number to view details or press 'ENTER' to go back to the main menu...");
+                    string movieChoice = Console.ReadLine();
+
+                    if (!string.IsNullOrEmpty(movieChoice) && int.TryParse(movieChoice, out int movieIndex) && movieIndex > 0 && movieIndex <= movies.Count)
+                    {
+                        MovieListing.DisplayMovieDetails(movies[movieIndex - 1]);
+                        Console.WriteLine("\nPress 'ENTER' to go back to the movie list...");
+                        Console.ReadLine();
+                    }                    
 
                     Console.WriteLine("Press 'ENTER' to go back to the main menu...");
                     Console.ReadLine();

@@ -18,5 +18,6 @@ public class MovieListing
         Console.WriteLine($"Showtimes: {movie.Showtimes}");
         Console.WriteLine($"Cast: {movie.Cast}");
         Console.WriteLine($"Director: {movie.Director}");
+        Console.WriteLine($"Ticket Price: ${movie.Price}");
     }
 }
