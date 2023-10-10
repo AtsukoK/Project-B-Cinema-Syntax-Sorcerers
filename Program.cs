@@ -19,7 +19,8 @@ class Program
 
         static List<Person> ReadPersonJson()
         {
-            string ExistingJsonPersonData = File.Exists("Person.json") ? File.ReadAllText("Person.json") : "[]"; //replace person.json with actual file path
+            string jsonFilePath = Path.Combine("Datasources", "Person.json"); // Datasource/Person.json
+            string ExistingJsonPersonData = File.Exists(jsonFilePath) ? File.ReadAllText(jsonFilePath) : "[]"; //replace person.json with actual file path
             List<Person> PersonList = JsonConvert.DeserializeObject<List<Person>>(ExistingJsonPersonData);
             return PersonList;
         }
@@ -42,8 +43,8 @@ class Program
             Console.WriteLine(PersonList);
 
             string updatedJson = JsonConvert.SerializeObject(PersonList, Formatting.Indented);
-
-            File.WriteAllText("Person.json", updatedJson);
+            string jsonFilePath = Path.Combine("Datasources", "Person.json"); // Datasource/Person.json
+            File.WriteAllText(jsonFilePath, updatedJson);
         }
 
 
