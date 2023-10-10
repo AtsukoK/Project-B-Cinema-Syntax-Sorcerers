@@ -39,24 +39,35 @@ public class Menu
             switch (choice)
             {
                 case "1":
-                    Console.WriteLine("Movie Listings:");
-                    List<Movie> movies = AccessData.ReadMoviesJson(); 
-                    MovieListing.DisplayMovies(movies);
-
-                    Console.WriteLine("\nSelect a movie number to view details or press 'ENTER' to go back to the main menu...");
-                    string movieChoice = Console.ReadLine();
-
-                    if (!string.IsNullOrEmpty(movieChoice) && int.TryParse(movieChoice, out int movieIndex) && movieIndex > 0 && movieIndex <= movies.Count)
+                    bool returnToMainMenu = false;
+                    while (!returnToMainMenu)
                     {
-                        MovieListing.DisplayMovieDetails(movies[movieIndex - 1]);
-                        Console.WriteLine("\nPress 'ENTER' to go back to the movie list...");
-                        Console.ReadLine();
-                    }                    
+                        Console.WriteLine("Movie Listings:");
+                        List<Movie> movies = AccessData.ReadMoviesJson(); 
+                        MovieListing.DisplayMovies(movies);
 
-                    Console.WriteLine("Press 'ENTER' to go back to the main menu...");
-                    Console.ReadLine();
+                        Console.WriteLine("\nSelect a movie number to view details, press 'ENTER' to refresh the movie list, or enter 'M' to return directly to the main menu...");
+                        string movieChoice = Console.ReadLine();
+
+                        if (!string.IsNullOrEmpty(movieChoice) && movieChoice.ToUpper() != "M" && int.TryParse(movieChoice, out int movieIndex) && movieIndex > 0 && movieIndex <= movies.Count)
+                        {
+                            MovieListing.DisplayMovieDetails(movies[movieIndex - 1]);
+                            Console.WriteLine("\nPress 'ENTER' to return to the movie list, or enter 'M' to return directly to the main menu...");
+                            movieChoice = Console.ReadLine();
+
+                            // If they decide to directly return to the main menu
+                            if (movieChoice.ToUpper() == "M")
+                            {
+                                returnToMainMenu = true;
+                            }
+                        }
+                        else if (string.IsNullOrEmpty(movieChoice) || movieChoice.ToUpper() == "M")
+                        {
+                            returnToMainMenu = true;
+                        }
+                    }
                     break;
-
+                    
                 case "2":
                     Console.WriteLine("Purchase Tickets:");
 
