@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
+using DataAccess;
+
 
 
 
@@ -17,14 +19,6 @@ class Program
         Console.WriteLine("You have chosen 1;");
         CreateUser();
 
-        static List<Person> ReadPersonJson()
-        {
-            string jsonFilePath = Path.Combine("Datasources", "Person.json"); // Datasource/Person.json
-            string ExistingJsonPersonData = File.Exists(jsonFilePath) ? File.ReadAllText(jsonFilePath) : "[]"; //replace person.json with actual file path
-            List<Person> PersonList = JsonConvert.DeserializeObject<List<Person>>(ExistingJsonPersonData);
-            return PersonList;
-        }
-
         static void CreateUser()
         {
             Console.WriteLine("Create your login");
@@ -37,7 +31,7 @@ class Program
             Person person = new Person(
                 email, name, password, false, reservations: new List<CheckOutObj>()
             );
-            List<Person> PersonList = ReadPersonJson(); //READ AND CREATE LIST OF ALL JSON DATA OF PERSONS
+            List<Person> PersonList = AccessPersonData.ReadPersonJson(); //READ AND CREATE LIST OF ALL JSON DATA OF PERSONS
             PersonList.Add(person);
 
             Console.WriteLine(PersonList);
