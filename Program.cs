@@ -1,9 +1,10 @@
 ﻿using DataAccess;
+using Logic;
 
 class Program
 {
     public static void Main()
     {
-        LoginMenu.CreateUser();
+        UserCreation.CreateUser();
     }
 }

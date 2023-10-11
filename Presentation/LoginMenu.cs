@@ -96,7 +96,7 @@
 //         }
 //     }
 // }
-using DataAcces;
+using DataAccess;
 using Newtonsoft.Json;
 namespace Logic
 {
@@ -142,13 +142,13 @@ namespace Logic
                 password = Console.ReadLine();
             }
 
-            Console.WriteLine("Phone number (optional): ");
-            string phone = Console.ReadLine();
-            while (!AccountValidation.ValidatePhone(phone))
-            {
-                Console.Write("Invalid phone number (optional): ");
-                phone = Console.ReadLine();
-            }
+            // Console.WriteLine("Phone number (optional): ");
+            // string phone = Console.ReadLine();
+            // while (!AccountValidation.ValidatePhone(phone))
+            // {
+            //     Console.Write("Invalid phone number (optional): ");
+            //     phone = Console.ReadLine();
+            // }
 
             Person person = new Person(
             email, name, password, false, reservations: new List<CheckOutObj>()

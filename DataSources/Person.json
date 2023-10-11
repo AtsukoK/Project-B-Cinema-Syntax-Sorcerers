@@ -6,7 +6,6 @@
     "IsAdmin": false,
     "Reservations": []
   },
-
   {
     "Email": "defaultuser@sscinema.com",
     "Name": "testuser",
@@ -14,12 +13,18 @@
     "IsAdmin": false,
     "Reservations": []
   },
-
   {
     "Email": "admin@sscinema.com",
     "Name": "admin",
     "Password": "admin1234!",
     "IsAdmin": true,
+    "Reservations": []
+  },
+  {
+    "Email": "sara@sra.nnl",
+    "Name": "sara",
+    "Password": "H14as3$343",
+    "IsAdmin": false,
     "Reservations": []
   }
 ]

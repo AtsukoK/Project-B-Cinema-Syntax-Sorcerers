@@ -14,7 +14,8 @@ public static class AccountValidation
         }
 
         // Check if username is unique
-        var json = File.ReadAllText("Person.json");
+        string jsonFilePath = Path.Combine("Datasources", "Person.json");
+        var json = File.ReadAllText(jsonFilePath);
         var persons = JsonSerializer.Deserialize<List<Person>>(json);
         if (persons.Any(p => p.Name == name))
         {
@@ -23,7 +24,7 @@ public static class AccountValidation
 
         return true;
     }
-    static bool ValidatePassword(string password)
+    public static bool ValidatePassword(string password)
     {
         // Validate password
         if (string.IsNullOrEmpty(password) || password.Length < 8)
@@ -38,7 +39,7 @@ public static class AccountValidation
 
         return true;
     }
-    static bool ValidateEmail(string email)
+    public static bool ValidateEmail(string email)
     // Validate email
     {
         if (string.IsNullOrEmpty(email))
@@ -46,7 +47,8 @@ public static class AccountValidation
             return false;
         }
         // Check if email is unique
-        var jsonString = File.ReadAllText("Person.json");
+        string jsonFilePath = Path.Combine("Datasources", "Person.json");
+        var jsonString = File.ReadAllText(jsonFilePath);
         var existingPersons = JsonSerializer.Deserialize<List<Person>>(jsonString);
         if (existingPersons.Any(p => p.Email == email))
         {
@@ -58,9 +60,13 @@ public static class AccountValidation
         {
             return false;
         }
+        else
+        {
+            return true;
+        }
     }
 
-    static bool ValidatePhone(string phoneNumber)
+    public static bool ValidatePhone(string phoneNumber)
     {
         // Validate phone number (optional)
         if (!string.IsNullOrEmpty(phoneNumber))
