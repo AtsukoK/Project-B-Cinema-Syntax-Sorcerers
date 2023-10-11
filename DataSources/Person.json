@@ -26,5 +26,12 @@
     "Password": "H14as3$343",
     "IsAdmin": false,
     "Reservations": []
+  },
+  {
+    "Email": "email@email.test",
+    "Name": "testttttttt",
+    "Password": "H14as3$343",
+    "IsAdmin": false,
+    "Reservations": []
   }
 ]
