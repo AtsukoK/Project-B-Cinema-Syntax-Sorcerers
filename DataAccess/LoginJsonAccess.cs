@@ -1,47 +1,39 @@
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace DataAccess
 {
     public class UserLoginUtility
     {
-        public static void UserLogin()
+        public class UserData
         {
-            string dataFolderPath = "DataSources";
-            string fileName = Path.Combine(dataFolderPath, "Person.json");
+            public string? Email { get; set; }
+            public string? Password { get; set; }
+        }
 
-            if (!File.Exists(fileName))
+        public static void UserLogin(string email, string password, string jsonFilePath)
+        {
+            List<UserData> users = JsonConvert.DeserializeObject<List<UserData>>(File.ReadAllText(jsonFilePath))!;
+
+            bool userFound = false;
+
+            foreach (UserData user in users)
             {
-                Console.WriteLine("User data file does not exist.");
-                return;
-            }
-
-            Console.Write("Enter your Email: ");
-            string email = Console.ReadLine()!;
-            Console.Write("Enter your Password: ");
-            string password = Console.ReadLine()!;
-
-            string jsonText = File.ReadAllText(fileName);
-
-            var userData = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(jsonText);
-
-            if (userData == null)
-            {
-                Console.WriteLine("Error parsing JSON data.");
-                return;
-            }
-
-            foreach (var user in userData)
-            {
-                if (user.TryGetValue("Email", out object? userEmail) && user.TryGetValue("Password", out object? userPassword) &&
-                    userEmail is string emailStr && userPassword is string passwordStr &&
-                    emailStr == email && passwordStr == password)
+                if (user.Email == email && user.Password == password)
                 {
-                    Console.WriteLine("Login successful!");
-                    return;
+                    userFound = true;
+                    break;
                 }
             }
 
-            Console.WriteLine("\nLogin failed. Email or password is incorrect.");
+            if (userFound)
+            {
+                Console.WriteLine("\nLogin successful!");
+
+            }
+            else
+            {
+                Console.WriteLine("\nLogin failed. Please check your email and password.");
+            }
         }
     }
 }

@@ -38,9 +38,14 @@ public class Menu
             {
                 case "1":
                     // If user chooses to login
-                    // call method "UserLogin"
-                    UserLoginUtility.UserLogin();
+                    string dataFolderPath = "DataSources";
+                    string jsonFilePath = Path.Combine(dataFolderPath, "Person.json");
 
+                    Console.Write("Enter your email: ");
+                    string userEmail = Console.ReadLine()!;
+
+                    string userPassword = MaskPassword();
+                    UserLoginUtility.UserLogin(userEmail, userPassword, jsonFilePath);
                     break;
                 case "2":
                     // call method "Create account"
@@ -55,12 +60,39 @@ public class Menu
                     Console.ReadLine();
                     break;
             }
-
-
-
         }
     }
+    private static string MaskPassword()
+    {
+        Console.Write("Enter your password: ");
+        string password = "";
+        ConsoleKeyInfo key;
+        while (true)
+        {
+            key = Console.ReadKey(intercept: true);
+
+            if (key.Key == ConsoleKey.Enter)
+            {
+                Console.WriteLine();
+                break;
+            }
+            else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+            {
+                password = password.Substring(0, password.Length - 1);
+                Console.Write("\b \b");
+            }
+            else
+            {
+                password += key.KeyChar;
+                Console.Write("*");
+            }
+        }
+        return password;
+    }
 }
+
+
+
 
 class Program
 {
