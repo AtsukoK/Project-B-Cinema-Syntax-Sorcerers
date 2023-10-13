@@ -25,7 +25,6 @@ public class MovieListing
     }
 }
 
-
 public static class BrowseMovieListing
 {
     public static void Display()
