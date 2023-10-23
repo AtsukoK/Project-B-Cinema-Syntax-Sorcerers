@@ -33,7 +33,6 @@ public class MainMenu
                     break;
             }
             exit = true;
-
         }
     }
 }
