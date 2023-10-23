@@ -1,29 +1,13 @@
 using DataAccess;
+using Logic;
 public class Menu
 {
     public static void LoginMenu()
     {
         bool exit = false;
-        // bool isAdmin = false;
-        // string adminPassword = "1234";
 
         while (!exit)
         {
-            string cinemaLogo = @"
-
-  /$$$$$$  /$$$$$$ /$$   /$$ /$$$$$$$$ /$$      /$$  /$$$$$$  /$$   /$$
- /$$__  $$|_  $$_/| $$$ | $$| $$_____/| $$$    /$$$ /$$__  $$| $$  / $$
-| $$  \__/  | $$  | $$$$| $$| $$      | $$$$  /$$$$| $$  \ $$|  $$/ $$/
-| $$        | $$  | $$ $$ $$| $$$$$   | $$ $$/$$ $$| $$$$$$$$ \  $$$$/
-| $$        | $$  | $$  $$$$| $$__/   | $$  $$$| $$| $$__  $$  >$$  $$
-| $$    $$  | $$  | $$\  $$$| $$      | $$\  $ | $$| $$  | $$ /$$/\  $$
-|  $$$$$$/ /$$$$$$| $$ \  $$| $$$$$$$$| $$ \/  | $$| $$  | $$| $$  \ $$
- \______/ |______/|__/  \__/|________/|__/     |__/|__/  |__/|__/  |__/
-                                                                       ";
-
-            Console.WriteLine(cinemaLogo);
-            Console.WriteLine("_______________________________________________________________________");
-            Console.WriteLine("\nWelcome to CineMax!\n");
             // Inlog systeem
             Console.WriteLine("Login or Create an account?\n");
             Console.WriteLine("1. Login\n2.Create account\n3.Exit");
@@ -46,9 +30,12 @@ public class Menu
 
                     string userPassword = MaskPassword();
                     UserLoginUtility.UserLogin(userEmail, userPassword, jsonFilePath);
+                    exit = true;
                     break;
                 case "2":
                     // call method "Create account"
+                    UserCreation.CreateUser();
+                    exit = true;
 
                     break;
                 case "3":

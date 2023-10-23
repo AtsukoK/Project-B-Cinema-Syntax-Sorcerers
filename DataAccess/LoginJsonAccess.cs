@@ -27,7 +27,7 @@ namespace DataAccess
 
             if (userFound)
             {
-                Console.WriteLine("\nLogin successful!");
+                Console.WriteLine("\nLogin successful!\n");
 
             }
             else

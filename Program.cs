@@ -8,6 +8,6 @@ class Program
 {
     public static void Main()
     {
-        Menu.LoginMenu();
+        MainMenu.Start();
     }
 }
