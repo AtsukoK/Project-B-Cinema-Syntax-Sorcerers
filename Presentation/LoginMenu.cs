@@ -11,11 +11,6 @@ public class Menu
             // Inlog systeem
             Console.WriteLine("Login or Create an account?\n");
             Console.WriteLine("1. Login\n2.Create account\n3.Exit");
-            // Console.WriteLine("Choose out of the following options:\n");
-            // Console.WriteLine("1. View available movies");
-            // Console.WriteLine("2. Purchase ticket");
-            // Console.WriteLine("3. Administrator mode");
-            // Console.WriteLine("4. Exit\n");
 
             string choice = Console.ReadLine()!;
             switch (choice)
