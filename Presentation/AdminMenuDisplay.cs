@@ -1,4 +1,4 @@
-class AdminMenu
+class AdminMenuDisplay
 {
     public static void Start()
     {
