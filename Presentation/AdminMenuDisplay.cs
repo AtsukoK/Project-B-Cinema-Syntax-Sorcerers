@@ -1,6 +1,6 @@
 class AdminMenuDisplay
 {
-    public static void Start()
+    public static void View()
     {
         bool exit = false;
 
