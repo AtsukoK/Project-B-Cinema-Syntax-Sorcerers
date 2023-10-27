@@ -6,7 +6,7 @@ class AdminMenuDisplay
 
         while (!exit)
         {
-            Console.WriteLine("Welcome to the Administrator Menu");
+            Console.WriteLine("Welcome to the Administrator Menu\n");
             Console.WriteLine("Choose out of the following options:");
             Console.WriteLine("1. Add movies");
             Console.WriteLine("2. Delete movies");
@@ -19,6 +19,7 @@ class AdminMenuDisplay
             switch (choice)
             {
                 case "1":
+                    AdminOptions.AddMovies();
                     break;
                 case "2":
                     break;
