@@ -24,7 +24,13 @@ public class Menu
                     string userEmail = Console.ReadLine()!;
 
                     string userPassword = MaskPassword();
-                    UserLoginUtility.UserLogin(userEmail, userPassword, jsonFilePath);
+                    bool isAdmin = UserLoginUtility.UserLogin(userEmail, userPassword, jsonFilePath);
+
+                    if (isAdmin)
+                    {
+                        // Admin-specific actions
+                        AdminMenuDisplay.View();
+                    }
                     exit = true;
                     break;
                 case "2":
