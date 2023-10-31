@@ -6,11 +6,13 @@ public class Chair
     public double Price;
     public bool IsReserved;
 
-    public Chair(int id, double price, bool isreserved)
+    public int Row;
+
+    public Chair(int id, double price, bool isreserved, int row)
     {
         ID = id;
         Price = price;
         IsReserved = isreserved;
-
+        Row = row;
     }
 }
