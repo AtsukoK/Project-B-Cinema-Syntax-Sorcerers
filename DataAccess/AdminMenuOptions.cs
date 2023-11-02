@@ -76,4 +76,42 @@ class AdminOptions
         File.WriteAllText(jsonFilePath, updatedJson);
 
     }
+
+
+
+    public static void EditTicketPrices()
+    {
+        string dataFolderPath = "DataSources";
+        string jsonFilePath = Path.Combine(dataFolderPath, "MovieDataSource.json");
+
+        string json = File.ReadAllText(jsonFilePath);
+        List<dynamic> movies = JsonConvert.DeserializeObject<List<dynamic>>(json)!;
+
+        Console.WriteLine("Enter movie title to change price: ");
+        string adminTitle = Console.ReadLine()!;
+        bool priceChanged = false;
+
+        for (int i = 0; i < movies.Count; i++)
+        {
+            if (movies[i]["title"] == adminTitle)
+            {
+                Console.WriteLine("New price:");
+                double newPrice = Convert.ToDouble(Console.ReadLine());
+
+                movies[i]["price"] = newPrice;
+                priceChanged = true;
+                Console.WriteLine("Price changed successfully");
+                break;
+            }
+        }
+
+        if (!priceChanged)
+        {
+            Console.WriteLine("Movie not found.");
+        }
+
+        string updatedJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
+
+        File.WriteAllText(jsonFilePath, updatedJson);
+    }
 }
