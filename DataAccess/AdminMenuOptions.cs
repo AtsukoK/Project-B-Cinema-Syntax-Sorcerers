@@ -1,3 +1,4 @@
+using DataAccess;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 class AdminOptions
@@ -44,12 +45,7 @@ class AdminOptions
 
     public static void RemoveMovies()
     {
-        string dataFolderPath = "DataSources";
-        string jsonFilePath = Path.Combine(dataFolderPath, "MovieDataSource.json");
-
-        string json = File.ReadAllText(jsonFilePath);
-        List<dynamic> movies = JsonConvert.DeserializeObject<List<dynamic>>(json)!;
-
+        List<dynamic> movies = AccessData.JsonObjList();
         Console.WriteLine("Enter movie title to remove: ");
         string adminPrompt = Console.ReadLine()!;
 
@@ -72,6 +68,7 @@ class AdminOptions
         }
 
         string updatedJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
+        string jsonFilePath = AccessData.GetMoviesJsonFilePath();
 
         File.WriteAllText(jsonFilePath, updatedJson);
 
@@ -81,11 +78,7 @@ class AdminOptions
 
     public static void EditTicketPrices()
     {
-        string dataFolderPath = "DataSources";
-        string jsonFilePath = Path.Combine(dataFolderPath, "MovieDataSource.json");
-
-        string json = File.ReadAllText(jsonFilePath);
-        List<dynamic> movies = JsonConvert.DeserializeObject<List<dynamic>>(json)!;
+        List<dynamic> movies = AccessData.JsonObjList();
 
         Console.WriteLine("Enter movie title to change price: ");
         string adminTitle = Console.ReadLine()!;
@@ -111,6 +104,7 @@ class AdminOptions
         }
 
         string updatedJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
+        string jsonFilePath = AccessData.GetMoviesJsonFilePath();
 
         File.WriteAllText(jsonFilePath, updatedJson);
     }

@@ -17,5 +17,18 @@ namespace DataAccess
             List<Movie> MovieList = JsonConvert.DeserializeObject<List<Movie>>(ExistingJsonData);
             return MovieList;
         }
+
+        public static string GetMoviesJsonFilePath()
+        {
+            return Path.Combine("Datasources", "MovieDataSource.json");
+        }
+        public static List<dynamic> JsonObjList()
+        {
+            string jsonFilePath = GetMoviesJsonFilePath();
+            string json = File.ReadAllText(jsonFilePath);
+            List<dynamic> movies = JsonConvert.DeserializeObject<List<dynamic>>(json)!;
+
+            return movies;
+        }
     }
 }
