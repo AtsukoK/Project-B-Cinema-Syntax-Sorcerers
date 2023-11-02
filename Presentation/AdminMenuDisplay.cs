@@ -25,6 +25,7 @@ class AdminMenuDisplay
                     AdminOptions.RemoveMovies();
                     break;
                 case "3":
+                    AdminOptions.EditTicketPrices();
                     break;
                 case "4":
                     break;
