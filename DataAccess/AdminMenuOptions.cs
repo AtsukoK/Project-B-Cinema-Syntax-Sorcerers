@@ -39,4 +39,41 @@ class AdminOptions
         Console.Write(userPrompt);
         return Console.ReadLine()!;
     }
+
+
+
+    public static void RemoveMovies()
+    {
+        string dataFolderPath = "DataSources";
+        string jsonFilePath = Path.Combine(dataFolderPath, "MovieDataSource.json");
+
+        string json = File.ReadAllText(jsonFilePath);
+        List<dynamic> movies = JsonConvert.DeserializeObject<List<dynamic>>(json)!;
+
+        Console.WriteLine("Enter movie title to remove: ");
+        string adminPrompt = Console.ReadLine()!;
+
+        bool movieRemoved = false;
+
+        for (int i = 0; i < movies.Count; i++)
+        {
+            if (movies[i]["title"] == adminPrompt)
+            {
+                movies.RemoveAt(i);
+                movieRemoved = true;
+                Console.WriteLine("Movie removed successfully.");
+                break;
+            }
+        }
+
+        if (!movieRemoved)
+        {
+            Console.WriteLine("Movie not found.");
+        }
+
+        string updatedJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
+
+        File.WriteAllText(jsonFilePath, updatedJson);
+
+    }
 }
