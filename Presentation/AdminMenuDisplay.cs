@@ -22,6 +22,7 @@ class AdminMenuDisplay
                     AdminOptions.AddMovies();
                     break;
                 case "2":
+                    AdminOptions.RemoveMovies();
                     break;
                 case "3":
                     break;
