@@ -50,5 +50,12 @@ class Program
                 currentROW++;
             }
         }
+        Console.WriteLine("\n");
+        Console.WriteLine("Which filename?");
+        String newfilename = Console.ReadLine();
+
+        string updatedJson = JsonConvert.SerializeObject(Chairs, Formatting.Indented);
+        string jsonFilePath = Path.Combine("Datasources", newfilename); // Datasource/filename
+        File.WriteAllText(jsonFilePath, updatedJson);
     }
 }
