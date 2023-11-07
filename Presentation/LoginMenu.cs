@@ -10,9 +10,10 @@ public class Menu
         {
             // Inlog systeem
             Console.WriteLine("Login or Create an account?\n");
-            Console.WriteLine("1. Login\n2.Create account\n3.Exit");
+            Console.WriteLine("1. Login\n2. Create account\n3. Exit");
 
             string choice = Console.ReadLine()!;
+            Console.Clear();
             switch (choice)
             {
                 case "1":
@@ -36,8 +37,6 @@ public class Menu
                 case "2":
                     // call method "Create account"
                     UserCreation.CreateUser();
-                    exit = true;
-
                     break;
                 case "3":
                     exit = true; // Exit the menu
@@ -75,6 +74,7 @@ public class Menu
                 Console.Write("*");
             }
         }
+        Console.Clear();
         return password;
     }
 }

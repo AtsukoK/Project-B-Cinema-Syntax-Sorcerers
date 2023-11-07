@@ -15,6 +15,7 @@ class AdminMenuDisplay
             Console.WriteLine("5. Exit");
 
             string choice = Console.ReadLine()!;
+            Console.Clear();
 
             switch (choice)
             {

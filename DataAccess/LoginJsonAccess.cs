@@ -27,23 +27,12 @@ namespace DataAccess
                     break;
                 }
             }
-
-            if (userFound)
+            if (!userFound)
             {
-                if (isAdmin)
-                {
-                    Console.WriteLine("\nAdmin login successful!\n");
-                }
-                else
-                {
-                    Console.WriteLine("\nUser login successful!\n");
-                }
+                Console.WriteLine("\nLogin failed. Please check your email and password.\n");
+                Menu.LoginMenu();
+            }
 
-            }
-            else
-            {
-                Console.WriteLine("\nLogin failed. Please check your email and password.");
-            }
             return isAdmin;
         }
     }

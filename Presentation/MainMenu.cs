@@ -27,6 +27,7 @@ public class MainMenu
             Console.WriteLine("1. View available movies");
             Console.WriteLine("2. Exit");
             string choice = Console.ReadLine()!;
+            Console.Clear();
             switch (choice)
             {
                 case "1":
