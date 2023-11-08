@@ -28,6 +28,7 @@ class AdminMenuDisplay
                     AdminOptions.EditTicketPrices();
                     break;
                 case "4":
+                    MovieEditDisplay.EditMovieInfo();
                     break;
                 case "5":
                     exit = true;
