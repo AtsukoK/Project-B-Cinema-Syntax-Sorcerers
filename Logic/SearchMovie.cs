@@ -53,28 +53,19 @@ namespace DataAccess
                 Console.WriteLine("Invalid input.");
             }
 
-            Console.WriteLine("Do you want to return to the main menu? (Y/N)");
-            string returnInput = Console.ReadLine().ToLower();
-            if (returnInput == "y")
-            {
-                MainMenu.Start();
-            }
         }
-        // niet gelukt om de main niet te laten zien als user n invoert
-
         private static List<Movie> SearchMovies(List<Movie> movies, string searchTerm)
         {
             List<Movie> matchingMovies = new List<Movie>();
             foreach (Movie movie in movies)
             {
-                if (movie.Title.ToLower().Contains(searchTerm.ToLower()))
+                if (movie.Title.ToLower().Contains(searchTerm.ToLower()) || movie.Genre.ToLower().Contains(searchTerm.ToLower()))
                 {
                     matchingMovies.Add(movie);
                 }
             }
-            return matchingMovies;
+            return matchingMovies; // returns a list of movies that match the search term
         }
-
 
     }
 }
