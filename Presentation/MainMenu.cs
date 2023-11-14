@@ -25,7 +25,8 @@ public class MainMenu
             Menu.LoginMenu();
             Console.WriteLine("\nChoose out of the following options:\n");
             Console.WriteLine("1. View available movies");
-            Console.WriteLine("2. Exit");
+            Console.WriteLine("2. Search for a movie");
+            Console.WriteLine("3. Exit");
             string choice = Console.ReadLine()!;
             Console.Clear();
             switch (choice)
