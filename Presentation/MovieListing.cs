@@ -45,7 +45,8 @@ public static class BrowseMovieListing
         {
             Console.Clear();
             Console.WriteLine("Movie Listings:");
-            List<Movie> movies = AccessData.ReadMoviesJson();
+            string jsonFilePath;
+            List<Movie> movies = AccessData.ReadMoviesJson(out jsonFilePath);
             MovieListing.DisplayMovies(movies);
 
             Console.WriteLine("\nSelect a movie number to view details, press 'ENTER' to refresh the movie list, or enter 'M' to return directly to the main menu...");
