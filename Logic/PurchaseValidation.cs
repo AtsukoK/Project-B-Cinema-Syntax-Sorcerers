@@ -57,4 +57,19 @@ class Validate
         }
         return cardholderName;
     }
+
+    public static void ConfirmPurchase()
+    {
+        Console.Clear();
+        Console.WriteLine("Press ENTER to confirm your purchase.");
+        if (Console.ReadKey().Key != ConsoleKey.Enter)
+        {
+            Console.WriteLine("Incorrect key. Please press ENTER to confirm your purchase.");
+            //Misschien teruggaan naar de movies
+        }
+        else
+        {
+            Console.WriteLine("\nPurchase Complete!\nThank for using CineMax!\n");
+        }
+    }
 }

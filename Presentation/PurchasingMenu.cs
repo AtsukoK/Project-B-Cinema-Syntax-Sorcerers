@@ -10,9 +10,7 @@ class PurchasingMenu
         {
             case "1":
                 CreditCardInfo();
-                Console.WriteLine("Press ENTER to confirm your purchase.");
-
-
+                Validate.ConfirmPurchase();
                 break;
             case "2":
                 break;
