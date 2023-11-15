@@ -21,7 +21,7 @@ class PurchasingMenu
     private static void CreditCardInfo()
     {
         Console.WriteLine("Please enter the following credit card information:\n");
-
+        Validate.userNameCard();
         Validate.userCardInfo();
     }
 }
