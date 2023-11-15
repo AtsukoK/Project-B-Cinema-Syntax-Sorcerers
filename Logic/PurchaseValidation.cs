@@ -29,13 +29,22 @@ class Validate
 
         Console.Write("Expiration Date (MM/YYYY): ");
         string expirationDate = Console.ReadLine()!;
+        string[] dates = expirationDate.Split('/');
+        int[] ints = Array.ConvertAll(dates, int.Parse);
+        int month = ints[0];
+        int year = ints[1];
+        IsValidDate(month, year);
+    }
 
-        if (!ExpirationDate(expirationDate))
-        {
-            Console.WriteLine("Invalid expiration date format. Please use MM/YY format.");
-            return;
-        }
-        ExpirationDate(expirationDate);
+    private static bool IsValidDate(int month, int year)
+    {
+        if (year < DateTime.MinValue.Year || year > DateTime.MaxValue.Year)
+            return false;
+
+        if (month < 1 || year >= 2023)
+            return false;
+
+        return month > 0 && year <= DateTime.DaysInMonth(month, year);
     }
 
     public static string? userNameCard()
@@ -47,17 +56,5 @@ class Validate
             return null;
         }
         return cardholderName;
-    }
-
-    public static bool ExpirationDate(string expirationDate)
-    {
-        if (expirationDate.Length == 7 && expirationDate[3] == '/' &&
-         expirationDate.Substring(0, 2).All(char.IsDigit) &&
-         expirationDate.Substring(4).All(char.IsDigit) &&
-         expirationDate.Substring(4).Length == 4)
-        {
-            return true;
-        }
-        return false;
     }
 }

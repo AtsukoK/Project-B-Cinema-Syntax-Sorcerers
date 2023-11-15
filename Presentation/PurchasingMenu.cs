@@ -12,6 +12,7 @@ class PurchasingMenu
                 CreditCardInfo();
                 Console.WriteLine("Press ENTER to confirm your purchase.");
 
+
                 break;
             case "2":
                 break;
@@ -21,7 +22,6 @@ class PurchasingMenu
     private static void CreditCardInfo()
     {
         Console.WriteLine("Please enter the following credit card information:\n");
-        Validate.userNameCard();
         Validate.userCardInfo();
     }
 }
