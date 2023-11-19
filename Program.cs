@@ -15,6 +15,7 @@ class Program
 {
     public static void Main()
     {
-        MainMenu.Start();
+        //MainMenu.Start();
+        Schedule.ScheduleAMovie();
     }
 }
