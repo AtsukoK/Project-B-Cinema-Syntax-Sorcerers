@@ -60,16 +60,32 @@ class Validate
 
     public static void ConfirmPurchase()
     {
-        Console.Clear();
         Console.WriteLine("Press ENTER to confirm your purchase.");
         if (Console.ReadKey().Key != ConsoleKey.Enter)
         {
-            Console.WriteLine("Incorrect key. Please press ENTER to confirm your purchase.");
+            Console.WriteLine("\nIncorrect key. Please press ENTER to confirm your purchase.");
             //Misschien teruggaan naar de movies
         }
         else
         {
-            Console.WriteLine("\nPurchase Complete!\nThank for using CineMax!\n");
+            Console.WriteLine("\nPayment successful!\nThank for using CineMax!\n");
         }
+    }
+
+    public static void iDealPayment()
+    {
+        Console.Clear();
+        Console.WriteLine("Total Amount: $50"); //Example of getting total amount of reservation
+        bool userPayed = true;
+
+        if (userPayed)
+        {
+            ConfirmPurchase();
+        }
+        else
+        {
+            Console.WriteLine("Payment failed. Please try again.");
+        }
+
     }
 }
