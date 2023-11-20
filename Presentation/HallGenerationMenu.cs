@@ -2,7 +2,7 @@ using DataAccess;
 using Logic;
 public class HallGeneration
 {
-    public static void HallGenerationMenu()
+    public static void HallGenerationMenu(String moviename)
     {
         bool exit = false;
 
@@ -17,16 +17,16 @@ public class HallGeneration
             {
                 case "1":
                     // If user chooses small hall
-                    HallCreation.GenerateSmallHall();
+                    HallCreation.GenerateSmallHall(moviename);
                     exit = true;
                     break;
                 case "2":
                     // chooses medium hall
-                    HallCreation.GenerateMediumHall();
+                    HallCreation.GenerateMediumHall(moviename);
                     break;
                 case "3":
                     // chooses large hall
-                    HallCreation.GenerateLargeHall();
+                    HallCreation.GenerateLargeHall(moviename);
                     break;
                 default:
                     Console.WriteLine("Invalid option. Please enter 1, 2, or 3.");

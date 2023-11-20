@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 public class HallCreation
 {
 
-    public static void GenerateSmallHall()
+    public static void GenerateSmallHall(String moviename)
     {
         List<char> row1 = new List<char> { 'X', 'X', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'X', 'X' };
 
@@ -52,9 +52,9 @@ public class HallCreation
         row13,
         row14
         };
-        GenerateOverview(rows);
+        GenerateOverview(rows, moviename);
     }
-    public static void GenerateMediumHall()
+    public static void GenerateMediumHall(String moviename)
     {
         List<char> row1 = new List<char> { 'X', 'X', 'X', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'X', 'X', 'X' };
 
@@ -117,10 +117,10 @@ public class HallCreation
         row19
         };
 
-        GenerateOverview(rows);
+        GenerateOverview(rows, moviename);
     }
 
-    public static void GenerateLargeHall()
+    public static void GenerateLargeHall(String moviename)
     {
         List<char> row1 = new List<char> { 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'X', 'X', 'X', 'X', 'X', 'X', 'X' };
 
@@ -187,7 +187,7 @@ public class HallCreation
         row20
         };
 
-        GenerateOverview(rows);
+        GenerateOverview(rows, moviename);
     }
 
 
@@ -210,7 +210,7 @@ public class HallCreation
             Console.ResetColor();
         }
     }
-    public static void GenerateOverview(List<List<char>> list)
+    public static void GenerateOverview(List<List<char>> list, String moviename)
     {
         List<List<char>> rows = list;
         int currentROW = 1;
@@ -292,12 +292,26 @@ public class HallCreation
             }
         }
         Console.WriteLine("\n");
-        Console.WriteLine("Which filename?");
-        String newfilename = Console.ReadLine();
 
-        string updatedJson = JsonConvert.SerializeObject(allchairs, Formatting.Indented);
-        string jsonFilePath = Path.Combine("Datasources", newfilename); // Datasource/filename
-        File.WriteAllText(jsonFilePath, updatedJson);
+        String ans;
+        do
+        {
+            Console.WriteLine("This will be the layout");
+            Console.WriteLine("Do you accept?          1) Yes   2) No, I want a different layout");
+            ans = Console.ReadLine();
+
+            if (ans == "1")
+            {
+                string updatedJson = JsonConvert.SerializeObject(allchairs, Formatting.Indented);
+                string jsonFilePath = Path.Combine("Datasources", moviename); // Datasource/filename
+                File.WriteAllText(jsonFilePath, updatedJson);
+            }
+            else if (ans == "2")
+            {
+                HallGeneration.HallGenerationMenu(moviename);
+            }
+
+        } while (ans != "1" && ans != "2");
     }
 
 }
