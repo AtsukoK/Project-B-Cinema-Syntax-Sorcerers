@@ -60,6 +60,7 @@ class Validate
 
     public static void ConfirmPurchase()
     {
+        Console.WriteLine("Total Amount: $50");  //Example of getting total amount of reservation
         Console.WriteLine("Press ENTER to confirm your purchase.");
         if (Console.ReadKey().Key != ConsoleKey.Enter)
         {
