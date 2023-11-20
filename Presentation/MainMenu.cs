@@ -35,19 +35,6 @@ public class MainMenu
                     break;
                 case "2":
                     SearchMovie.SearchMoviesByName();
-                    Console.WriteLine("Do you want to return to the main menu? (y/n)");
-                    string returnChoice = Console.ReadLine().ToLower();
-
-                    while (returnChoice != "y" && returnChoice != "n")
-                    {
-                        Console.WriteLine("Invalid input. Please enter 'y' to return to the main menu or 'n' to exit.");
-                        returnChoice = Console.ReadLine().ToLower();
-                    }
-
-                    if (returnChoice == "n")
-                    {
-                        exit = true;
-                    }
                     break;
                 case "3":
                     exit = true;
