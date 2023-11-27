@@ -16,6 +16,6 @@ class Program
     public static void Main()
     {
         //MainMenu.Start();
-        Schedule.Schedule2MovieName();
+        Schedule.CreateShow();
     }
 }

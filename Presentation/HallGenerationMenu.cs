@@ -17,16 +17,16 @@ public class HallGeneration
             {
                 case "1":
                     // If user chooses small hall
-                    HallCreation.GenerateSmallHall(moviename);
+                    HallCreation.GenerateSmallHall();
                     exit = true;
                     break;
                 case "2":
                     // chooses medium hall
-                    HallCreation.GenerateMediumHall(moviename);
+                    HallCreation.GenerateMediumHall();
                     break;
                 case "3":
                     // chooses large hall
-                    HallCreation.GenerateLargeHall(moviename);
+                    HallCreation.GenerateLargeHall();
                     break;
                 default:
                     Console.WriteLine("Invalid option. Please enter 1, 2, or 3.");

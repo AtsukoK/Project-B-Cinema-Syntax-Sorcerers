@@ -1,14 +1,23 @@
 public class Show
 {
 
-    public int RoomID;
-    public List<Chair> Chairs;
-    public Movie Movie;
 
-    public Show(int roomid, List<Chair> chairs, Movie movie)
+    public List<Chair> Chairs;
+    public String Moviename;
+    public String ChairsFileName;
+
+    public DateTime MovieStartDate;
+    public DateTime MovieEndDate;
+
+    public Show(List<Chair> chairs, String movie, string filename, DateTime start, DateTime end)
     {
-        RoomID = roomid;
         Chairs = chairs;
-        Movie = movie;
+        Moviename = movie;
+        ChairsFileName = filename;
+        MovieStartDate = start;
+        MovieEndDate = end;
+
+
+
     }
 }

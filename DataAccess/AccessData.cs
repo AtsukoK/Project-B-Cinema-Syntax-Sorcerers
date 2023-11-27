@@ -18,6 +18,14 @@ namespace DataAccess
             return MovieList;
         }
 
+        public static List<Show> ReadShowsJson()
+        {
+            string jsonFilePath = Path.Combine("Datasources", "MovieShowsSource.json"); // Datasource/Movie.json
+            string ExistingJsonData = File.Exists(jsonFilePath) ? File.ReadAllText(jsonFilePath) : "[]";
+            List<Show> ShowList = JsonConvert.DeserializeObject<List<Show>>(ExistingJsonData);
+            return ShowList;
+        }
+
         public static string GetMoviesJsonFilePath()
         {
             return Path.Combine("Datasources", "MovieDataSource.json");
