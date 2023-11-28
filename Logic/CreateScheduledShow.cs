@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.ComponentModel.Design;
 using DataAccess;
 using System.Data;
+using Newtonsoft.Json;
 
 class Schedule
 {
@@ -124,6 +125,8 @@ class Schedule
 
         Show newShow = null;
 
+        List<Show> ShowList = AccessData.ReadShowsJson();
+
         if (choice == "1")
         {
             Console.WriteLine("You selected hall 1.");
@@ -131,6 +134,8 @@ class Schedule
             NewFinalName = $"{finalName}-hall1";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
             newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
+            ShowList.Add(newShow);
+
 
         }
         else if (choice == "2")
@@ -140,6 +145,7 @@ class Schedule
             NewFinalName = $"{finalName}-hall2";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
             newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
+            ShowList.Add(newShow);
         }
         else if (choice == "3")
         {
@@ -148,10 +154,16 @@ class Schedule
             NewFinalName = $"{finalName}-hall3";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
             newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
+            ShowList.Add(newShow);
         }
         else
         {
             Console.WriteLine("Invalid selection.");
         }
+
+        string updatedJson = JsonConvert.SerializeObject(ShowList, Formatting.Indented);
+        string jsonFilePath = Path.Combine("Datasources", "ShowList.json"); // Datasource/ShowList.json
+        File.WriteAllText(jsonFilePath, updatedJson);
+        Console.WriteLine("Show Created Successfully and saved to ShowList.Json");
     }
 }
