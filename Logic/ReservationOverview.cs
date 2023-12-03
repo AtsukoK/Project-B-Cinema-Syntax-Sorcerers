@@ -32,6 +32,13 @@ class Reservation
                         {
                             Viewer.ViewShows(movieTitle);
                             movieFound = true;
+                            Console.WriteLine("Enter the number of the chair you want to reserve: ");
+                            string selectedChairId = Console.ReadLine()!;
+
+                            if (ReserveChair(show, selectedChairId))
+                            {
+                                HallDisplay.DisplayHall(show);
+                            }
                             break;
                         }
                     }
@@ -54,5 +61,25 @@ class Reservation
             Console.WriteLine($"Error: {ex.Message}"); // if the file is not found a message will show up
         }
 
+    }
+
+    public static bool ReserveChair(Show show, string chairId)
+    {
+        List<Chair> allChairs = show.Chairs;
+
+        if (allChairs != null)
+        {
+            Chair selectedChair = allChairs.Find(chair => chair.ID == int.Parse(chairId))!;
+
+            if (selectedChair != null && !selectedChair.IsReserved)
+            {
+                selectedChair.IsReserved = true;
+                Console.WriteLine($"Chair {selectedChair.ID} reserved successfully!");
+                return true;
+            }
+        }
+
+        Console.WriteLine("Chair not found or already reserved.");
+        return false;
     }
 }
