@@ -9,44 +9,6 @@ using Newtonsoft.Json;
 
 class Schedule
 {
-
-    // public static DateTime Schedule1MovieDate()
-    // {
-    //     do
-    //     {
-    //         DateTime dateTime;
-    //         Console.Clear();
-    //         Console.WriteLine("Scheduling movie for a specific date.\n");
-    //         Console.Write("Please Enter a date in format dd/mm/yyyy: ");
-    //         String schedulestring = Console.ReadLine();
-    //         var isValidDate = DateTime.TryParse(schedulestring, out dateTime);
-    //         if (isValidDate)
-    //         {
-    //             dateTime = DateTime.ParseExact(schedulestring, "dd/M/yyyy", null);
-    //             Console.WriteLine($"Your selected date is: {dateTime.ToShortDateString()}");
-    //             Console.WriteLine("Is this correct?\n1) Yes.  \n2) No.");
-    //             String ans = Console.ReadLine();
-    //             if (ans == "1")
-    //             {
-    //                 return dateTime;
-    //             }
-    //             else
-    //             {
-    //                 Schedule1MovieDate();
-    //             }
-    //         }
-    //         else
-    //         {
-    //             Console.ForegroundColor = ConsoleColor.Red;
-    //             Console.WriteLine("Invalid date, please try again.");
-    //             Console.ResetColor();
-    //             Thread.Sleep(3000);
-    //         }
-
-    //     } while (true);
-
-    // }
-
     public static String ScheduleMovieName()
     {
         do
