@@ -2,7 +2,7 @@ using DataAccess;
 using Logic;
 public class HallGeneration
 {
-    public static void HallGenerationMenu()
+    public static void HallGenerationMenu(String moviename)
     {
         bool exit = false;
 

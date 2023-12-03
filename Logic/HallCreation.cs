@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 public class HallCreation
 {
 
-    public static void GenerateSmallHall()
+    public static List<List<char>> GenerateSmallHall()
     {
         List<char> row1 = new List<char> { 'X', 'X', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'X', 'X' };
 
@@ -52,9 +52,10 @@ public class HallCreation
         row13,
         row14
         };
-        GenerateOverview(rows);
+        return rows;
+        // GenerateOverview(rows, $"hall1-{moviename}");
     }
-    public static void GenerateMediumHall()
+    public static List<List<char>> GenerateMediumHall()
     {
         List<char> row1 = new List<char> { 'X', 'X', 'X', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'X', 'X', 'X' };
 
@@ -116,11 +117,11 @@ public class HallCreation
         row18,
         row19
         };
-
-        GenerateOverview(rows);
+        return rows;
+        // GenerateOverview(rows, $"hall2-{moviename}"); ;
     }
 
-    public static void GenerateLargeHall()
+    public static List<List<char>> GenerateLargeHall()
     {
         List<char> row1 = new List<char> { 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'X', 'X', 'X', 'X', 'X', 'X', 'X' };
 
@@ -186,8 +187,8 @@ public class HallCreation
         row19,
         row20
         };
-
-        GenerateOverview(rows);
+        return rows;
+        // GenerateOverview(rows, $"hall3-{moviename}"); ;
     }
 
 
@@ -210,7 +211,7 @@ public class HallCreation
             Console.ResetColor();
         }
     }
-    public static void GenerateOverview(List<List<char>> list)
+    public static List<Chair> GenerateOverview(List<List<char>> list, String moviename)
     {
         List<List<char>> rows = list;
         int currentROW = 1;
@@ -292,12 +293,13 @@ public class HallCreation
             }
         }
         Console.WriteLine("\n");
-        Console.WriteLine("Which filename?");
-        String newfilename = Console.ReadLine();
+
 
         string updatedJson = JsonConvert.SerializeObject(allchairs, Formatting.Indented);
-        string jsonFilePath = Path.Combine("Datasources", newfilename); // Datasource/filename
+        string jsonFilePath = Path.Combine("Datasources", moviename); // Datasource/filename
         File.WriteAllText(jsonFilePath, updatedJson);
+
+        return allchairs;
     }
 
 }
