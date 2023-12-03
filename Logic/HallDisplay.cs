@@ -17,7 +17,7 @@ class HallDisplay
                 {
                     Console.Write("[RES]");
                     Console.ResetColor();
-                    break;
+                    // break;
                 }
 
                 else if (chair.ID == 0)
