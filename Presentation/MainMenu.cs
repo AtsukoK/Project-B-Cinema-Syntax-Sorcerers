@@ -26,7 +26,8 @@ public class MainMenu
             Console.WriteLine("\nChoose out of the following options:\n");
             Console.WriteLine("1. View available movies");
             Console.WriteLine("2. Search movies");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. Purchase movie tickets");
+            Console.WriteLine("4. Exit");
             string choice = Console.ReadLine()!;
             switch (choice)
             {
@@ -37,6 +38,9 @@ public class MainMenu
                     SearchMovie.SearchMoviesByName();
                     break;
                 case "3":
+                    Reservation.View();
+                    break;
+                case "4":
                     exit = true;
                     break;
             }

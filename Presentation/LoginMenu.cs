@@ -10,7 +10,7 @@ public class Menu
         {
             // Inlog systeem
             Console.WriteLine("Login or Create an account?\n");
-            Console.WriteLine("1. Login\n2.Create account\n3.Exit");
+            Console.WriteLine("1. Login\n2. Create account\n3. Exit");
 
             string choice = Console.ReadLine()!;
             switch (choice)
