@@ -131,7 +131,7 @@ class Schedule
         {
             Console.WriteLine("You selected hall 1.");
             rowsofchairs = HallCreation.GenerateSmallHall();
-            NewFinalName = $"{finalName}-hall1";
+            NewFinalName = $"{finalName}-hall1.json";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
             newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
             ShowList.Add(newShow);
@@ -142,7 +142,7 @@ class Schedule
         {
             Console.WriteLine("You selected hall 2.");
             rowsofchairs = HallCreation.GenerateMediumHall();
-            NewFinalName = $"{finalName}-hall2";
+            NewFinalName = $"{finalName}-hall2.json";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
             newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
             ShowList.Add(newShow);
@@ -151,7 +151,7 @@ class Schedule
         {
             Console.WriteLine("You selected hall 3.");
             rowsofchairs = HallCreation.GenerateLargeHall();
-            NewFinalName = $"{finalName}-hall3";
+            NewFinalName = $"{finalName}-hall3.json";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
             newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
             ShowList.Add(newShow);
