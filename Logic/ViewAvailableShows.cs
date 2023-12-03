@@ -27,10 +27,15 @@ class Viewer
             if (show.Moviename == UserInp)
             {
                 Console.WriteLine($"[SHOW {IndexNumber}] Start at {show.MovieStartDate}                   End at {show.MovieEndDate}");
-                Console.WriteLine("Ticket Prices");
-                Console.WriteLine($"Economy Seats[Blue]: {MovieObject.Price}");
-                Console.WriteLine($"Pro Seats  [Yellow]: {MovieObject.Price * 1.05}");
-                Console.WriteLine($"Vip Seats     [Red]: {MovieObject.Price * 1.10}");
+                Console.WriteLine("\nTicket Prices");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine($"Economy Seats     [Blue]: {MovieObject.Price}");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine($"Pro Seats       [Yellow]: {Math.Round(MovieObject.Price * 1.05, 2)}");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Vip Seats          [Red]: {Math.Round(MovieObject.Price * 1.10, 2)}");
+                Console.ResetColor();
+                Console.WriteLine();
                 IndexNumber++;
                 HallDisplay.DisplayHall(show);
             }

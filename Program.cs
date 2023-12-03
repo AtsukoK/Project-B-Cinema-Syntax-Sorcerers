@@ -15,10 +15,6 @@ class Program
 {
     public static void Main()
     {
-        //MainMenu.Start();
-
-        Schedule.CreateShow();
-        // Console.Write("Enter ShowName");
-        // Viewer.ViewShows(Console.ReadLine());
+        MainMenu.Start();
     }
 }

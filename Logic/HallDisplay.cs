@@ -1,3 +1,5 @@
+using System.Threading.Tasks.Dataflow;
+
 class HallDisplay
 {
     public static void DisplayHall(Show showobject)
@@ -8,7 +10,6 @@ class HallDisplay
 
         while (currentChairIndex < allchairs.Count)
         {
-
             if (allchairs[currentChairIndex].Row == currentROW)
             {
                 Chair chair = allchairs[currentChairIndex];
@@ -48,10 +49,12 @@ class HallDisplay
             }
             else
             {
+                Console.Write($" (ROW)[{currentROW}]");
                 Console.WriteLine();
                 currentROW++;
             }
         }
+        Console.Write($" (ROW)[{currentROW}]");
         Console.WriteLine("\n");
     }
 
