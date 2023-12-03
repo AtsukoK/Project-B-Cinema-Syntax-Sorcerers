@@ -16,6 +16,21 @@ class Program
     public static void Main()
     {
         //MainMenu.Start();
-        Schedule.CreateShow();
+        Console.Clear();
+        List<Show> Shows = AccessData.ReadShowsJson();
+        string UserInp = Console.ReadLine();
+        Console.WriteLine($"Movie:{UserInp}");
+        int IndexNumber = 1;
+
+        foreach (Show show in Shows)
+        {
+
+            if (show.Moviename == UserInp)
+            {
+                Console.WriteLine($"[SHOW {IndexNumber}] Start at {show.MovieStartDate}                   End at {show.MovieEndDate}");
+                IndexNumber++;
+                HallDisplay.DisplayHall(show);
+            }
+        }
     }
 }
