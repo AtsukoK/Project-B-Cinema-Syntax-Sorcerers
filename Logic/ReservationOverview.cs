@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 class Reservation
 
 {
+    private static int hallDisplayCounter = 0;
     public static void View()
     {
 
@@ -81,6 +82,12 @@ class Reservation
                     double totalCost = movie.Price * selectedChair.Price;
                     string formattedNumber = totalCost.ToString("F2");
                     Console.WriteLine($"\nTotal Cost: {formattedNumber}\n");
+
+                    if (hallDisplayCounter == 0)
+                    {
+                        HallDisplay.DisplayHall(show);
+                        hallDisplayCounter++;
+                    }
                 }
                 else
                 {
