@@ -23,7 +23,6 @@ class AdminMenuDisplay
                     AdminOptions.AddMovies();
                     break;
                 case "2":
-                    // method for movie scheduling should go here
                     Schedule.CreateShow();
                     break;
                 case "3":

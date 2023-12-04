@@ -1,4 +1,5 @@
 using DataAccess;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 class Reservation
 
@@ -6,62 +7,34 @@ class Reservation
     public static void View()
     {
 
-        Console.WriteLine("Enter movie title: ");
-        string movieTitle = Console.ReadLine()!;
+        // try
+        // {
+
+        Viewer.DisplayOnlyAvailableShows();
+        Console.WriteLine("Select show time by number: ");
+        int userChoice = Convert.ToInt32(Console.ReadLine()!);
+        Show selectedShow = Viewer.SelectShow(userChoice);
+        Console.Clear();
+        HallDisplay.DisplayHall(selectedShow);
+        Console.WriteLine("Enter the number of the chair you want to reserve: ");
+
+        string selectedChairId = Console.ReadLine()!;
         List<Movie> movies = AccessData.ReadMoviesJson();
-        List<Show> Shows = AccessData.ReadShowsJson();
-        string filePath = Path.Combine("Datasources", "MovieDataSource.json");
+        Movie selectedMovie = null;
 
-        try
+        foreach (Movie movie in movies)
         {
-            string jsonData = File.ReadAllText(filePath);
-
-            JArray data = JArray.Parse(jsonData); // parses json into array
-
-            bool movieFound = false;
-
-            foreach (Movie movie in movies)
+            if (movie.Title == selectedShow.Moviename)
             {
-                foreach (JObject obj in data)
-                {
-                    string title = (string)obj["title"]!;
-
-                    foreach (Show show in Shows)
-                    {
-                        if (show.Moviename == title)
-                        {
-                            Viewer.ViewShows(movieTitle);
-                            movieFound = true;
-                            // Console.Clear();
-                            Console.WriteLine("Enter the number of the chair you want to reserve: ");
-                            string selectedChairId = Console.ReadLine()!;
-
-                            ReserveChair(show, selectedChairId, movie);
-                            break;
-                        }
-                    }
-                }
-
-                if (movieFound)
-                {
-                    break; // exit outer loop when movie is found
-                }
-            }
-
-            if (!movieFound)
-            {
-                Console.WriteLine("Movie not available.");
+                selectedMovie = movie;
             }
         }
 
-        catch (FileNotFoundException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}"); // if the file is not found a message will show up
-        }
+        ReserveChair(selectedShow, selectedChairId, selectedMovie!, userChoice);
 
     }
 
-    public static bool ReserveChair(Show show, string chairId, Movie movie)
+    public static bool ReserveChair(Show show, string chairId, Movie movie, int choice)
     {
         List<Chair> allChairs = show.Chairs;
 
@@ -81,11 +54,27 @@ class Reservation
                     Console.WriteLine($"\nTotal Cost: {formattedNumber}\n");
 
                     HallDisplay.DisplayHall(show);
+
+
+                    string updatedJson = JsonConvert.SerializeObject(allChairs, Formatting.Indented);
+                    Show newShow = show;
+                    List<Show> shows = AccessData.ReadShowsJson();
+                    shows[choice] = newShow;
+                    string jsonFilePath = Path.Combine("Datasources", show.ChairsFileName); // Datasource/filename
+                    File.WriteAllText(jsonFilePath, updatedJson);
+
+
+                    string updatedJsonFile = JsonConvert.SerializeObject(shows, Formatting.Indented);
+                    string jsonFile = Path.Combine("Datasources", "ShowList.json"); // Datasource/ShowList.json
+                    File.WriteAllText(jsonFilePath, updatedJson);
+                    AccessData.ReadShowsJson();
+
                 }
                 else
                 {
                     Console.WriteLine("Error: Movie information not available.");
                 }
+
 
                 return true;
             }
