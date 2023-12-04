@@ -9,10 +9,11 @@ class AdminMenuDisplay
             Console.WriteLine("Welcome to the Administrator Menu\n");
             Console.WriteLine("Choose out of the following options:");
             Console.WriteLine("1. Add movies");
-            Console.WriteLine("2. Delete movies");
-            Console.WriteLine("3. Edit ticket prices");
-            Console.WriteLine("4. Edit movie information");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("2. Schedule movies");
+            Console.WriteLine("3. Delete movies");
+            Console.WriteLine("4. Edit ticket prices");
+            Console.WriteLine("5. Edit movie information");
+            Console.WriteLine("6. Exit");
 
             string choice = Console.ReadLine()!;
 
@@ -22,15 +23,19 @@ class AdminMenuDisplay
                     AdminOptions.AddMovies();
                     break;
                 case "2":
-                    AdminOptions.RemoveMovies();
+                    // method for movie scheduling should go here
+                    Schedule.CreateShow();
                     break;
                 case "3":
-                    AdminOptions.EditTicketPrices();
+                    AdminOptions.RemoveMovies();
                     break;
                 case "4":
-                    MovieEditDisplay.EditMovieInfo();
+                    AdminOptions.EditTicketPrices();
                     break;
                 case "5":
+                    MovieEditDisplay.EditMovieInfo();
+                    break;
+                case "6":
                     exit = true;
                     break;
             }

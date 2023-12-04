@@ -17,7 +17,8 @@ class HallDisplay
                 {
                     Console.Write("[RES]");
                     Console.ResetColor();
-                    break;
+                    // break;
+                    // Removed "break" after seat set to "RES" due to display problems
                 }
 
                 else if (chair.ID == 0)
