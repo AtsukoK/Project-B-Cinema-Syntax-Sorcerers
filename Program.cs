@@ -15,6 +15,10 @@ class Program
 {
     public static void Main()
     {
-        MainMenu.Start();
+        // MainMenu.Start();
+        // Schedule.CreateShow();
+        Viewer.DisplayOnlyAvailableShows();
+        Show showobject = Viewer.SelectShow(3);
+        Console.WriteLine(showobject.ChairsFileName);
     }
 }

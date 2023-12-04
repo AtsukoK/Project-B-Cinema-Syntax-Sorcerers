@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using DataAccess;
 
 class Viewer
@@ -40,5 +41,29 @@ class Viewer
                 HallDisplay.DisplayHall(show);
             }
         }
+    }
+
+    public static void DisplayOnlyAvailableShows()
+    {
+        List<Show> Shows = AccessData.ReadShowsJson();
+        List<Movie> MovieObjects = AccessData.ReadMoviesJson();
+        int IndexNumber = 1;
+
+        foreach (Show show in Shows)
+        {
+            Console.WriteLine($"[SHOW {IndexNumber}] 'Movie:{show.Moviename}' Starts at {show.MovieStartDate}         End at {show.MovieEndDate}");
+            IndexNumber++;
+        }
+
+
+    }
+
+    public static Show SelectShow(int selection)
+    {
+        List<Show> Shows = AccessData.ReadShowsJson();
+        Show SelectedShow = null;
+
+        SelectedShow = Shows[selection - 1];
+        return SelectedShow;
     }
 }
