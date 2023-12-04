@@ -3,7 +3,6 @@ using Newtonsoft.Json.Linq;
 class Reservation
 
 {
-    // private static int hallDisplayCounter = 0;
     public static void View()
     {
 
@@ -21,7 +20,7 @@ class Reservation
 
             bool movieFound = false;
 
-            foreach (var movie in movies)
+            foreach (Movie movie in movies)
             {
                 foreach (JObject obj in data)
                 {
@@ -33,13 +32,11 @@ class Reservation
                         {
                             Viewer.ViewShows(movieTitle);
                             movieFound = true;
+                            // Console.Clear();
                             Console.WriteLine("Enter the number of the chair you want to reserve: ");
                             string selectedChairId = Console.ReadLine()!;
 
-                            if (ReserveChair(show, selectedChairId, movie))
-                            {
-                                HallDisplay.DisplayHall(show);
-                            }
+                            ReserveChair(show, selectedChairId, movie);
                             break;
                         }
                     }
@@ -75,7 +72,7 @@ class Reservation
             if (selectedChair != null && !selectedChair.IsReserved)
             {
                 selectedChair.IsReserved = true;
-                Console.WriteLine($"Chair {selectedChair.ID} reserved successfully!");
+                Console.WriteLine($"\nChair {selectedChair.ID} reserved successfully!");
 
                 if (movie != null)
                 {
@@ -83,11 +80,7 @@ class Reservation
                     string formattedNumber = totalCost.ToString("F2");
                     Console.WriteLine($"\nTotal Cost: {formattedNumber}\n");
 
-                    // if (hallDisplayCounter == 0)
-                    // {
                     HallDisplay.DisplayHall(show);
-                    // hallDisplayCounter++;
-                    // }
                 }
                 else
                 {
