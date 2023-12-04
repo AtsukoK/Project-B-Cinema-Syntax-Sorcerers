@@ -35,7 +35,7 @@ class Reservation
                             Console.WriteLine("Enter the number of the chair you want to reserve: ");
                             string selectedChairId = Console.ReadLine()!;
 
-                            if (ReserveChair(show, selectedChairId))
+                            if (ReserveChair(show, selectedChairId, movie))
                             {
                                 HallDisplay.DisplayHall(show);
                             }
@@ -63,7 +63,7 @@ class Reservation
 
     }
 
-    public static bool ReserveChair(Show show, string chairId)
+    public static bool ReserveChair(Show show, string chairId, Movie movie)
     {
         List<Chair> allChairs = show.Chairs;
 
@@ -75,6 +75,18 @@ class Reservation
             {
                 selectedChair.IsReserved = true;
                 Console.WriteLine($"Chair {selectedChair.ID} reserved successfully!");
+
+                if (movie != null)
+                {
+                    double totalCost = movie.Price * selectedChair.Price;
+                    string formattedNumber = totalCost.ToString("F2");
+                    Console.WriteLine($"\nTotal Cost: {formattedNumber}\n");
+                }
+                else
+                {
+                    Console.WriteLine("Error: Movie information not available.");
+                }
+
                 return true;
             }
         }
