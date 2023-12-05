@@ -10,9 +10,10 @@ class Reservation
         Console.WriteLine("Select show time by number: ");
         int userChoice = Convert.ToInt32(Console.ReadLine()!);
         Show selectedShow = Viewer.SelectShow(userChoice);
-        Console.Clear();
+        // Console.Clear();
+        Viewer.ViewShows(selectedShow.Moviename);
         HallDisplay.DisplayHall(selectedShow);
-        Console.WriteLine("Enter the number of the chair you want to reserve:");
+        Console.WriteLine("\nEnter the number of the chair you want to reserve:");
 
         string selectedChairId = Console.ReadLine()!;
         List<Movie> movies = AccessData.ReadMoviesJson();
@@ -27,8 +28,9 @@ class Reservation
         }
 
         ReserveChair(selectedShow, selectedChairId, selectedMovie!, userChoice);
-
     }
+
+
 
     public static bool ReserveChair(Show show, string chairId, Movie movie, int choice)
     {
@@ -41,13 +43,14 @@ class Reservation
             if (selectedChair != null && !selectedChair.IsReserved)
             {
                 selectedChair.IsReserved = true;
-                Console.WriteLine($"\nChair {selectedChair.ID} reserved successfully!\n");
 
                 if (movie != null)
                 {
+
                     HallDisplay.DisplayHall(show);
-                    double totalCost = movie.Price * selectedChair.Price;
+                    double totalCost = Math.Round(movie.Price * selectedChair.Price, 2);
                     string formattedNumber = totalCost.ToString("F2");
+                    Console.WriteLine($"\nChair {selectedChair.ID} reserved successfully!");
                     Console.WriteLine($"\nTotal Cost: ${formattedNumber}\n");
 
 
@@ -67,15 +70,14 @@ class Reservation
                         Console.WriteLine("Invalid show selection.");
                     }
 
-
+                    //updating chairs json file
                     string jsonFilePath = Path.Combine("Datasources", show.ChairsFileName); // Datasource/filename
                     File.WriteAllText(jsonFilePath, updatedJson);
 
-
+                    //updating show list json file
                     string updatedJsonFile = JsonConvert.SerializeObject(shows, Formatting.Indented);
                     string jsonFile = Path.Combine("Datasources", "ShowList.json"); // Datasource/ShowList.json
                     File.WriteAllText(jsonFile, updatedJsonFile);
-                    // AccessData.ReadShowsJson();
                 }
 
                 else
@@ -86,7 +88,9 @@ class Reservation
                 return true;
             }
         }
-        Console.WriteLine("Chair not found or already reserved.");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("\nThis chair is already reserved. Please select another chair.");
+        Console.ResetColor();
         return false;
     }
 }
