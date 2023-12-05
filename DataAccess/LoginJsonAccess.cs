@@ -11,24 +11,19 @@ namespace DataAccess
             public bool IsAdmin { get; set; }
         }
 
-        public static bool UserLogin(string email, string password, string jsonFilePath)
+        public static UserData UserLogin(string email, string password, string jsonFilePath)
         {
             List<UserData> users = JsonConvert.DeserializeObject<List<UserData>>(File.ReadAllText(jsonFilePath))!;
-
-            bool userFound = false;
-            bool isAdmin = false;
 
             foreach (UserData user in users)
             {
                 if (user.Email == email && user.Password == password)
                 {
-                    userFound = true;
-                    isAdmin = user.IsAdmin;
-                    break;
+                    return user; // Return the user information
                 }
             }
 
-            return isAdmin;
+            return null; // Return null if no matching user is found
         }
     }
 }

@@ -15,6 +15,6 @@ class Program
 {
     public static void Main()
     {
-        MainMenu.Start();
+        Menu.LoginMenu();
     }
 }
