@@ -37,7 +37,6 @@ class Viewer
                 Console.ResetColor();
                 Console.WriteLine();
                 IndexNumber++;
-                HallDisplay.DisplayHall(show);
             }
         }
     }

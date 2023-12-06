@@ -9,7 +9,21 @@ public class Menu
         while (!exit)
         {
             // Inlog systeem
-            Console.WriteLine("Login or Create an account?\n");
+            string cinemaLogo = @"
+
+  /$$$$$$  /$$$$$$ /$$   /$$ /$$$$$$$$ /$$      /$$  /$$$$$$  /$$   /$$
+ /$$__  $$|_  $$_/| $$$ | $$| $$_____/| $$$    /$$$ /$$__  $$| $$  / $$
+| $$  \__/  | $$  | $$$$| $$| $$      | $$$$  /$$$$| $$  \ $$|  $$/ $$/
+| $$        | $$  | $$ $$ $$| $$$$$   | $$ $$/$$ $$| $$$$$$$$ \  $$$$/
+| $$        | $$  | $$  $$$$| $$__/   | $$  $$$| $$| $$__  $$  >$$  $$
+| $$    $$  | $$  | $$\  $$$| $$      | $$\  $ | $$| $$  | $$ /$$/\  $$
+|  $$$$$$/ /$$$$$$| $$ \  $$| $$$$$$$$| $$ \/  | $$| $$  | $$| $$  \ $$
+ \______/ |______/|__/  \__/|________/|__/     |__/|__/  |__/|__/  |__/
+                                                                       ";
+
+            Console.WriteLine(cinemaLogo);
+            Console.WriteLine("_______________________________________________________________________");
+            Console.WriteLine("\nLogin or Create an account?\n");
             Console.WriteLine("1. Login\n2. Create account\n3. Exit");
 
             string choice = Console.ReadLine()!;
@@ -20,18 +34,47 @@ public class Menu
                     string dataFolderPath = "DataSources";
                     string jsonFilePath = Path.Combine(dataFolderPath, "Person.json");
 
-                    Console.Write("Enter your email: ");
-                    string userEmail = Console.ReadLine()!;
+                    bool loginSuccess = false;
 
-                    string userPassword = MaskPassword();
-                    bool isAdmin = UserLoginUtility.UserLogin(userEmail, userPassword, jsonFilePath);
-
-                    if (isAdmin)
+                    do
                     {
-                        // Admin-specific actions
-                        AdminMenuDisplay.View();
-                    }
-                    exit = true;
+                        Console.Write("Enter your email: ");
+                        string userEmail = Console.ReadLine()!;
+
+                        string userPassword = MaskPassword();
+                        UserLoginUtility.UserData loggedInUser = UserLoginUtility.UserLogin(userEmail, userPassword, jsonFilePath);
+
+                        if (loggedInUser != null)
+                        {
+                            if (loggedInUser.IsAdmin)
+                            {
+                                // Admin-specific actions
+                                AdminMenuDisplay.View();
+                            }
+                            else
+                            {
+                                // Regular user-specific actions
+                                Console.Clear();
+                                loginSuccess = true;
+                                MainMenu.Start();
+                                exit = true;
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Login failed. Invalid email or password. Please try again.");
+                            Console.WriteLine("Press ENTER to try again or type 'exit' to go back to the main menu.");
+
+                            string userInput = Console.ReadLine()!;
+                            if (userInput?.ToLower() == "exit")
+                            {
+                                exit = true;
+                                break; // Exit the loop and go back to the main menu
+                            }
+                        }
+                    } while (!loginSuccess);
+
                     break;
                 case "2":
                     // call method "Create account"
