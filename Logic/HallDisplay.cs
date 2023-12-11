@@ -15,32 +15,52 @@ class HallDisplay
                 Chair chair = allchairs[currentChairIndex];
                 if (chair.IsReserved == true)
                 {
-                    Console.Write("[RES]");
+                    Console.Write("[RE]");
                     Console.ResetColor();
                 }
 
                 else if (chair.ID == 0)
                 {
                     HallCreation.ColorChanger(chair);
-                    Console.Write("[---]");
+                    Console.Write("[--]");
                     Console.ResetColor();
                 }
                 else if (chair.ID < 10)
                 {
-                    HallCreation.ColorChanger(chair);
-                    Console.Write($"[00{chair.ID}]");
+                    if (chair.ChairInTheRow < 10)
+                    {
+                        Console.Write($"[0{chair.ChairInTheRow}]");
+                    }
+                    else
+                    {
+                        Console.Write($"[{chair.ChairInTheRow}]");
+                    }
                     Console.ResetColor();
                 }
                 else if (chair.ID < 100)
                 {
                     HallCreation.ColorChanger(chair);
-                    Console.Write($"[0{chair.ID}]");
+                    if (chair.ChairInTheRow < 10)
+                    {
+                        Console.Write($"[0{chair.ChairInTheRow}]");
+                    }
+                    else
+                    {
+                        Console.Write($"[{chair.ChairInTheRow}]");
+                    }
                     Console.ResetColor();
                 }
                 else
                 {
                     HallCreation.ColorChanger(chair);
-                    Console.Write($"[{chair.ID}]");
+                    if (chair.ChairInTheRow < 10)
+                    {
+                        Console.Write($"[0{chair.ChairInTheRow}]");
+                    }
+                    else
+                    {
+                        Console.Write($"[{chair.ChairInTheRow}]");
+                    }
                     Console.ResetColor();
                 }
 
