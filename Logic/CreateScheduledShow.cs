@@ -95,7 +95,7 @@ class Schedule
             rowsofchairs = HallCreation.GenerateSmallHall();
             NewFinalName = $"{finalName}-hall1.json";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
-            newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
+            newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate, 1);
             ShowList.Add(newShow);
 
 
@@ -106,7 +106,7 @@ class Schedule
             rowsofchairs = HallCreation.GenerateMediumHall();
             NewFinalName = $"{finalName}-hall2.json";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
-            newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
+            newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate, 2);
             ShowList.Add(newShow);
         }
         else if (choice == "3")
@@ -115,7 +115,7 @@ class Schedule
             rowsofchairs = HallCreation.GenerateLargeHall();
             NewFinalName = $"{finalName}-hall3.json";
             generatedchairs = HallCreation.GenerateOverview(rowsofchairs, NewFinalName);
-            newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate);
+            newShow = new Show(generatedchairs, MovieName, NewFinalName, StartDate, EndDate, 3);
             ShowList.Add(newShow);
         }
         else

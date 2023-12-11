@@ -216,6 +216,7 @@ public class HallCreation
         List<List<char>> rows = list;
         int currentROW = 1;
         int currentID = 1;
+        int chairInRow = 1;
 
         List<Chair> allchairs = new List<Chair> { };
         foreach (var row in rows)
@@ -224,30 +225,34 @@ public class HallCreation
             {
                 if (character == 'A')
                 {
-                    Chair chair = new Chair(currentID, 1.0, false, currentROW);
+                    Chair chair = new Chair(currentID, 1.0, false, currentROW, chairInRow);
                     currentID++;
+                    chairInRow++;
                     allchairs.Add(chair);
                 }
                 else if (character == 'B')
                 {
-                    Chair chair = new Chair(currentID, 1.05, false, currentROW);
+                    Chair chair = new Chair(currentID, 1.05, false, currentROW, chairInRow);
                     currentID++;
+                    chairInRow++;
                     allchairs.Add(chair);
                 }
                 else if (character == 'C')
                 {
-                    Chair chair = new Chair(currentID, 1.10, false, currentROW);
+                    Chair chair = new Chair(currentID, 1.10, false, currentROW, chairInRow);
                     currentID++;
+                    chairInRow++;
                     allchairs.Add(chair);
                 }
                 else if (character == 'X')
                 {
-                    Chair chair = new Chair(0, 0, false, currentROW);
+                    Chair chair = new Chair(0, 0, false, currentROW, 99);
                     allchairs.Add(chair);
                 }
 
             }
             currentROW++;
+            chairInRow = 1;
         }
 
         currentROW = 1;
