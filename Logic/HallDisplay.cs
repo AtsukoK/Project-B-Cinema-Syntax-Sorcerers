@@ -27,6 +27,7 @@ class HallDisplay
                 }
                 else if (chair.ID < 10)
                 {
+                    HallCreation.ColorChanger(chair);
                     if (chair.ChairInTheRow < 10)
                     {
                         Console.Write($"[0{chair.ChairInTheRow}]");
@@ -37,6 +38,7 @@ class HallDisplay
                     }
                     Console.ResetColor();
                 }
+
                 else if (chair.ID < 100)
                 {
                     HallCreation.ColorChanger(chair);

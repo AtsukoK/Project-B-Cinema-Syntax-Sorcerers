@@ -67,7 +67,7 @@
       {
         "ID": 8,
         "Price": 1.0,
-        "IsReserved": false,
+        "IsReserved": true,
         "Row": 1,
         "ChairInTheRow": 8
       },
