@@ -26,5 +26,19 @@
     "Password": "s@raHi346",
     "IsAdmin": false,
     "Reservations": []
+  },
+  {
+    "Email": "1",
+    "Name": "1",
+    "Password": "1",
+    "IsAdmin": false,
+    "Reservations": []
+  },
+  {
+    "Email": "2",
+    "Name": "2",
+    "Password": "2",
+    "IsAdmin": true,
+    "Reservations": []
   }
 ]

@@ -246,7 +246,7 @@ public class HallCreation
                 }
                 else if (character == 'X')
                 {
-                    Chair chair = new Chair(0, 0, false, currentROW, chairInRow);
+                    Chair chair = new Chair(0, 0, false, currentROW, 99);
                     allchairs.Add(chair);
                 }
 
