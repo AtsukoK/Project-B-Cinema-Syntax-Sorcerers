@@ -14,6 +14,7 @@ namespace DataAccess
 
                 if (matchingMovies.Count > 0)
                 {
+                    Console.Clear();
                     Console.WriteLine("Matching Movies:");
                     for (int i = 0; i < matchingMovies.Count; i++) // loop through matchingMovies and display the title of each movie in a list
                     {
@@ -55,6 +56,7 @@ namespace DataAccess
 
         private static void DisplayMovieDetails(Movie movie)
         {
+            Console.Clear();
             Console.WriteLine($"Title: {movie.Title}");
             Console.WriteLine($"Price: {movie.Price}");
             Console.WriteLine($"Duration: {movie.Duration}");
