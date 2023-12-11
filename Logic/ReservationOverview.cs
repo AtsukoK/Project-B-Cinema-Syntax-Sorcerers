@@ -51,7 +51,7 @@ class Reservation
                     double totalCost = Math.Round(movie.Price * selectedChair.Price, 2);
                     string formattedNumber = totalCost.ToString("F2");
                     Console.WriteLine($"\nChair {selectedChair.ID} reserved successfully!");
-                    Console.WriteLine($"\nTotal Cost: ${formattedNumber}\n");
+                    Console.WriteLine($"\nTotal Cost: €{formattedNumber}\n");
                     PurchasingMenu.View();
 
 
