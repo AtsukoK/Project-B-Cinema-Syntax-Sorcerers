@@ -96,8 +96,8 @@ class Reservation
 
         string formattedNumber = totalCost.ToString("F2");
         Console.WriteLine($"\nTotal cost: €{formattedNumber}\n");
+        PurchasingMenu.View();
 
-        // Update JSON files
         string updatedJson = JsonConvert.SerializeObject(allChairs, Formatting.Indented);
         Show newShow = show;
         List<Show> shows = AccessData.ReadShowsJson();
