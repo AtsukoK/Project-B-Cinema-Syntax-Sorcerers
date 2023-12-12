@@ -13,85 +13,111 @@ class Reservation
         // Console.Clear();
         Viewer.ViewShows(selectedShow.Moviename);
         HallDisplay.DisplayHall(selectedShow);
-        Console.WriteLine("\nEnter the number of the chair you want to reserve:");
 
-        string selectedChairId = Console.ReadLine()!;
         List<Movie> movies = AccessData.ReadMoviesJson();
-        Movie selectedMovie = null;
+        Movie selectedMovie = movies.FirstOrDefault(movie => movie.Title == selectedShow.Moviename)!;
 
-        foreach (Movie movie in movies)
-        {
-            if (movie.Title == selectedShow.Moviename)
-            {
-                selectedMovie = movie;
-            }
-        }
-
-        ReserveChair(selectedShow, selectedChairId, selectedMovie!, userChoice);
+        ReserveChair(selectedShow, selectedMovie, userChoice);
     }
 
-
-
-    public static bool ReserveChair(Show show, string chairId, Movie movie, int choice)
+    public static void ReserveChair(Show show, Movie movie, int choice)
     {
         List<Chair> allChairs = show.Chairs;
+        List<Chair> reservedChairs = new List<Chair>();
+        double totalCost = 0;
 
-        if (allChairs != null)
+        while (true)
         {
-            Chair selectedChair = allChairs.Find(chair => chair.ID == int.Parse(chairId))!;
+            Console.WriteLine("\nEnter the row number OR type 'done' to finish:");
+            string selectedRowInput = Console.ReadLine()!;
 
-            if (selectedChair != null && !selectedChair.IsReserved)
+            if (selectedRowInput.ToLower() == "done")
             {
-                selectedChair.IsReserved = true;
+                break;
+            }
 
-                if (movie != null)
+            int selectedRow = int.Parse(selectedRowInput);
+
+            if (!allChairs.Any(chair => chair.Row == selectedRow))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\nInvalid row number {selectedRow}. Please enter a valid row number.");
+                Console.ResetColor();
+                continue;
+            }
+
+            List<Chair> availableChairsInRow = allChairs
+                .Where(chair => chair.Row == selectedRow && !chair.IsReserved)
+                .ToList();
+
+            if (availableChairsInRow.Count > 0)
+            {
+                Console.WriteLine("\nEnter the number of the chair you want to reserve OR type 'done' to finish:");
+                string selectedChairId = Console.ReadLine()!;
+
+                if (selectedChairId.ToLower() == "done")
                 {
+                    break;
+                }
 
-                    HallDisplay.DisplayHall(show);
-                    double totalCost = Math.Round(movie.Price * selectedChair.Price, 2);
-                    string formattedNumber = totalCost.ToString("F2");
-                    Console.WriteLine($"\nChair {selectedChair.ID} reserved successfully!");
-                    Console.WriteLine($"\nTotal Cost: ${formattedNumber}\n");
-                    PurchasingMenu.View();
+                Chair selectedChair = availableChairsInRow.Find(chair => chair.ChairInTheRow == int.Parse(selectedChairId))!;
 
+                if (selectedChair != null)
+                {
+                    selectedChair.IsReserved = true;
+                    reservedChairs.Add(selectedChair);
 
-                    string updatedJson = JsonConvert.SerializeObject(allChairs, Formatting.Indented);
-                    Show newShow = show;
-                    List<Show> shows = AccessData.ReadShowsJson();
-
-                    //subtracts 1 from the choice variable before using it as an index
-                    // because the first index is 0 and not 1
-
-                    if (choice - 1 >= 0 && choice - 1 < shows.Count)
+                    if (movie != null)
                     {
-                        shows[choice - 1] = newShow;
+                        double chairCost = Math.Round(movie.Price * selectedChair.Price, 2);
+                        totalCost += chairCost;
+                        HallDisplay.DisplayHall(show);
+                        Console.WriteLine($"\nChair {selectedChairId} in Row {selectedRow} reserved successfully!");
                     }
                     else
                     {
-                        Console.WriteLine("Invalid show selection.");
+                        Console.WriteLine("Error: Movie information not available.");
                     }
-
-                    //updating chairs json file
-                    string jsonFilePath = Path.Combine("Datasources", show.ChairsFileName); // Datasource/filename
-                    File.WriteAllText(jsonFilePath, updatedJson);
-
-                    //updating show list json file
-                    string updatedJsonFile = JsonConvert.SerializeObject(shows, Formatting.Indented);
-                    string jsonFile = Path.Combine("Datasources", "ShowList.json"); // Datasource/ShowList.json
-                    File.WriteAllText(jsonFile, updatedJsonFile);
                 }
-
                 else
                 {
-                    Console.WriteLine("Error: Movie information not available.");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nInvalid chair number. Please select an available chair.");
+                    Console.ResetColor();
                 }
-
-                return true;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\nNo available chairs in Row {selectedRow}. Please select another row.");
+                Console.ResetColor();
             }
         }
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("\nThis chair is already reserved. Please select another chair.");
-        Console.ResetColor();
-        return false;
+
+        string formattedNumber = totalCost.ToString("F2");
+        Console.WriteLine($"\nTotal cost: €{formattedNumber}\n");
+
+        // Update JSON files
+        string updatedJson = JsonConvert.SerializeObject(allChairs, Formatting.Indented);
+        Show newShow = show;
+        List<Show> shows = AccessData.ReadShowsJson();
+
+        if (choice - 1 >= 0 && choice - 1 < shows.Count)
+        {
+            shows[choice - 1] = newShow;
+        }
+        else
+        {
+            Console.WriteLine("Invalid show selection.");
+        }
+
+        string jsonFilePath = Path.Combine("Datasources", show.ChairsFileName);
+        File.WriteAllText(jsonFilePath, updatedJson);
+
+        string updatedJsonFile = JsonConvert.SerializeObject(shows, Formatting.Indented);
+        string jsonFile = Path.Combine("Datasources", "ShowList.json");
+        File.WriteAllText(jsonFile, updatedJsonFile);
     }
+
+
 }
