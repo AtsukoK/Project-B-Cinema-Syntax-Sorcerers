@@ -7,7 +7,7 @@ public class MainMenu
 
         while (!exit)
         {
-            Console.Clear();
+            // Console.Clear();
             string cinemaLogo = @"
 
   /$$$$$$  /$$$$$$ /$$   /$$ /$$$$$$$$ /$$      /$$  /$$$$$$  /$$   /$$

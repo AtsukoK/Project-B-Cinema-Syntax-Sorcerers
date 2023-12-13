@@ -49,14 +49,17 @@ public class Menu
                         {
                             if (loggedInUser.IsAdmin)
                             {
-                                // Admin-specific actions
                                 AdminMenuDisplay.View();
                             }
                             else
                             {
-                                // Regular user-specific actions
-                                Console.Clear();
+                                // Console.Clear();
                                 loginSuccess = true;
+                                ActiveUser.LoggedUser = (Person)loggedInUser;
+                                Console.WriteLine();
+                                Console.WriteLine($"Name: {ActiveUser.LoggedUser.Name}");
+                                Console.WriteLine($"Email: {ActiveUser.LoggedUser.Email}");
+                                Console.WriteLine($"Is Admin: {ActiveUser.LoggedUser.IsAdmin}");
                                 MainMenu.Start();
                                 exit = true;
                             }
