@@ -4,6 +4,7 @@ namespace DataAccess
     {
         public static void SearchMoviesByName()
         {
+            Console.Clear();
             Console.WriteLine("Enter the name or part of the name of the movie you're looking for:");
             string movieName = Console.ReadLine();
 
@@ -14,6 +15,7 @@ namespace DataAccess
 
                 if (matchingMovies.Count > 0)
                 {
+                    Console.Clear();
                     Console.WriteLine("Matching Movies:");
                     for (int i = 0; i < matchingMovies.Count; i++) // loop through matchingMovies and display the title of each movie in a list
                     {

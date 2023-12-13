@@ -23,7 +23,7 @@ class Schedule
             }
             if (listMoviesString.Contains(selection))
             {
-                Console.WriteLine($"Movie: {selection} selected.");
+                Console.WriteLine($"Movie: {selection} selected.\n");
                 return selection;
             }
             else
@@ -39,15 +39,17 @@ class Schedule
 
     public static DateTime GetDateTime()
     {
-        Console.WriteLine("Enter the date and time for the movie:");
+        Console.WriteLine("Enter the start date and time for the movie:");
 
         // Get the date
         Console.Write("Enter the date (dd/MM/yyyy): ");
         DateTime DateObject = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+        Console.WriteLine();
 
         // Get the time
         Console.Write("Enter the time (HH:mm): ");
         DateTime TimeObject = DateTime.ParseExact(Console.ReadLine(), "HH:mm", null);
+        Console.WriteLine();
 
         // Combine date and time to get the starting date and time for the movie
         DateTime DateTimeObject = DateObject.Add(TimeObject.TimeOfDay);
@@ -61,17 +63,15 @@ class Schedule
         Console.WriteLine("Enter movie name for which you want to create a scheduled show:");
         string MovieName = ScheduleMovieName();
 
-        Console.WriteLine("Now enter a starting date for the show:");
         DateTime StartDate = GetDateTime();
 
-        Console.WriteLine("Now enter a starting date for the show:");
         DateTime EndDate = GetDateTime();
 
         string filenameDateTimeString = StartDate.ToString("yyyyMMdd_HHmmss");
         string finalName = $"{MovieName}-{filenameDateTimeString}";
 
         // Display the filename-friendly date-time string
-        Console.WriteLine($"Filename-Friendly Date-Time String: {filenameDateTimeString}");
+        // Console.WriteLine($"Filename-Friendly Date-Time String: {filenameDateTimeString}");
 
         Console.WriteLine("Now choose a hall for the show:");
         Console.WriteLine("Hall 1 - 150 seats");

@@ -13,6 +13,7 @@ class PurchasingMenu
                 Validate.ConfirmPurchase();
                 break;
             case "2":
+                Console.Clear();
                 Console.WriteLine("Choose your Bank:\n");
                 Console.WriteLine("1. ABN AMBRO\n2. ING\n3. Rabobank");
                 string choice = Console.ReadLine()!;

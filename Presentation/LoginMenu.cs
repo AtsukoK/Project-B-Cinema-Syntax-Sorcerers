@@ -38,6 +38,7 @@ public class Menu
 
                     do
                     {
+                        Console.Clear();
                         Console.Write("Enter your email: ");
                         string userEmail = Console.ReadLine()!;
 

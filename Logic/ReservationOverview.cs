@@ -33,6 +33,7 @@ class Reservation
 
             if (selectedRowInput.ToLower() == "done")
             {
+                Console.Clear();
                 break;
             }
 

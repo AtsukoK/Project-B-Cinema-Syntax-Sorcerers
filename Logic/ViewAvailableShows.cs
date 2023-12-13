@@ -21,6 +21,7 @@ class Viewer
             }
         }
 
+
         foreach (Show show in Shows)
         {
 
@@ -45,6 +46,10 @@ class Viewer
         List<Show> Shows = AccessData.ReadShowsJson();
         List<Movie> MovieObjects = AccessData.ReadMoviesJson();
         int IndexNumber = 1;
+
+        Console.Clear();
+        Console.WriteLine("Available shows");
+        Console.WriteLine("_______________________________________________________________________\n");
 
         foreach (Show show in Shows)
         {
