@@ -1,13 +1,13 @@
 public class CheckOutObj
 {
-    public string MovieName;
-    public double MoviePrice;
-    public double ChairPrice;
+    public Person PersonObj;
+    public Show ShowObj;
+    public List<Chair> ChairListObj;
 
-    public CheckOutObj(string moviename, double movieprice, double chairprice)
+    public CheckOutObj(Person personobj, Show showobj, List<Chair> listchairobj)
     {
-        MovieName = moviename;
-        MoviePrice = movieprice;
-        ChairPrice = chairprice;
+        PersonObj = personobj;
+        ShowObj = showobj;
+        ChairListObj = listchairobj;
     }
 }
