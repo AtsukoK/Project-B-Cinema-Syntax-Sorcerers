@@ -7,6 +7,7 @@ public class Chair
     public bool IsReserved;
     public int Row;
     public int ChairInTheRow;
+    public Person ReservedBy;
 
     public Chair(int id, double price, bool isreserved, int row, int chairinrow)
     {
@@ -15,6 +16,7 @@ public class Chair
         IsReserved = isreserved;
         Row = row;
         ChairInTheRow = chairinrow;
+        ReservedBy = null;
 
 
 
