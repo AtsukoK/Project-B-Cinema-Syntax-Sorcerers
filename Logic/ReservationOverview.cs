@@ -66,6 +66,7 @@ class Reservation
                 if (selectedChair != null)
                 {
                     selectedChair.IsReserved = true;
+                    selectedChair.ReservedBy = ActiveUser.LoggedUser;
                     reservedChairs.Add(selectedChair);
 
                     if (movie != null)
@@ -73,7 +74,7 @@ class Reservation
                         double chairCost = Math.Round(movie.Price * selectedChair.Price, 2);
                         totalCost += chairCost;
                         HallDisplay.DisplayHall(show);
-                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser, show, reservedChairs);
+                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser, show.Moviename, show.HallType, reservedChairs);
                         List<Person> OldUserList = AccessData.ReadPersonJson();
                         foreach (Person person in OldUserList)
                         {

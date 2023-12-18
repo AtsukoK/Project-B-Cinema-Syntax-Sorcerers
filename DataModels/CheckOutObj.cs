@@ -1,13 +1,17 @@
 public class CheckOutObj
 {
     public Person PersonObj;
-    public Show ShowObj;
+    public string MovieName;
+    // public Show ShowObj;
+    public int Hall;
     public List<Chair> ChairListObj;
 
-    public CheckOutObj(Person personobj, Show showobj, List<Chair> listchairobj)
+    public CheckOutObj(Person personobj, string moviename, int hall, List<Chair> listchairobj)
     {
         PersonObj = personobj;
-        ShowObj = showobj;
+        MovieName = moviename;
+        // ShowObj = showobj;
+        Hall = hall;
         ChairListObj = listchairobj;
     }
 }
