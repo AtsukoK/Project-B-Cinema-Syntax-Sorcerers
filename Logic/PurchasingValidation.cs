@@ -69,7 +69,7 @@ class Validate
         }
         else
         {
-            Console.WriteLine("\nPayment successful!\nThank for using CineMax!\n");
+            Console.WriteLine($"\nPayment successful!\nThank for using CineMax {ActiveUser.LoggedUser.Name}!\n");
             Thread.Sleep(3000);
 
         }

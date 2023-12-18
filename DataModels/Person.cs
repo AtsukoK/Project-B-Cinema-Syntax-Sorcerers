@@ -1,11 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using DataAccess;
 
-public class Person
+public class Person : UserLoginUtility.UserData
 {
-    public string Email { get; set; }
     public string Name { get; set; }
-    public string Password { get; set; }
-    public bool IsAdmin { get; set; }
     public List<CheckOutObj> Reservations { get; set; }
 
     public Person(string email, string name, string password, bool isadmin, List<CheckOutObj> reservations)

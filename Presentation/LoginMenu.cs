@@ -49,14 +49,13 @@ public class Menu
                         {
                             if (loggedInUser.IsAdmin)
                             {
-                                // Admin-specific actions
                                 AdminMenuDisplay.View();
                             }
                             else
                             {
-                                // Regular user-specific actions
-                                Console.Clear();
+                                // Console.Clear();
                                 loginSuccess = true;
+                                ActiveUser.LoggedUser = (Person)loggedInUser;
                                 MainMenu.Start();
                                 exit = true;
                             }
