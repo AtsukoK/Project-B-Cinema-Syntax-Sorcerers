@@ -73,6 +73,21 @@ class Reservation
                         double chairCost = Math.Round(movie.Price * selectedChair.Price, 2);
                         totalCost += chairCost;
                         HallDisplay.DisplayHall(show);
+                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser, show, reservedChairs);
+                        List<Person> OldUserList = AccessData.ReadPersonJson();
+                        foreach (Person person in OldUserList)
+                        {
+                            if (ActiveUser.LoggedUser.Name == person.Name)
+                            {
+                                person.Reservations.Add(userReservation);
+                                Console.WriteLine("Match found, user updated.");
+                            }
+                        }
+                        string NewPersonJson = JsonConvert.SerializeObject(OldUserList, Formatting.Indented);
+                        string jsonFilePath2 = Path.Combine("Datasources", "Person.json"); // Datasource/Person.json
+                        File.WriteAllText(jsonFilePath2, NewPersonJson);
+
+
                         Console.WriteLine($"\nChair {selectedChairId} in Row {selectedRow} reserved successfully!");
                     }
                     else
