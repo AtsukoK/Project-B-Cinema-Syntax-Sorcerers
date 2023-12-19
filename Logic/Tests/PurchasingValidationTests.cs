@@ -94,6 +94,55 @@ namespace Logic.Tests
             // assert
             Assert.AreEqual(expectedValidCardNum, actualValidCardNum);
         }
+
+        [TestMethod]
+        public void UserNameCard_Valid()
+        {
+            // arrange
+            string expectedFullName = "Sara Mokadem";
+            StringReader stringReader = new StringReader(expectedFullName);
+            Console.SetIn(stringReader);
+
+            // act
+            string? actualFullName = Validate.userNameCard();
+
+            // assert
+            Assert.AreEqual(expectedFullName, actualFullName);
+        }
+        // naam => valid
+
+        [TestMethod]
+        public void UserNameCard_Invalid()
+        {
+            // arrange
+            string expectedFullName = "";
+            StringReader stringReader = new StringReader(expectedFullName);
+            Console.SetIn(stringReader);
+
+            // act
+            string? actualFullName = Validate.userNameCard();
+
+            // assert
+            Assert.IsNull(actualFullName);
+        }
+        // naam => leeg => niet valid
+
+        [TestMethod]
+        public void UserNameCard_Invalid2()
+        {
+            // arrange
+            string expectedFullName = "    ";
+            StringReader stringReader = new StringReader(expectedFullName);
+            Console.SetIn(stringReader);
+
+            // act
+            string? actualFullName = Validate.userNameCard();
+
+            // assert
+            Assert.IsNull(actualFullName);
+        }
+        // naam => whitespace => niet valid
     }
 }
+
 
