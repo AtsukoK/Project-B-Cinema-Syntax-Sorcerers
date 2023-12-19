@@ -24,6 +24,7 @@ class Reservation
     {
         List<Chair> allChairs = show.Chairs;
         List<Chair> reservedChairs = new List<Chair>();
+        List<ChairInfo> reservedChairInfos = new List<ChairInfo>();          
         double totalCost = 0;
 
         while (true)
@@ -68,27 +69,24 @@ class Reservation
                     selectedChair.IsReserved = true;
                     selectedChair.ReservedBy = ActiveUser.LoggedUser;
                     reservedChairs.Add(selectedChair);
-
+                    reservedChairInfos.Add(new ChairInfo(selectedRow, selectedChair.ChairInTheRow)); 
+                     
                     if (movie != null)
                     {
                         double chairCost = Math.Round(movie.Price * selectedChair.Price, 2);
                         totalCost += chairCost;
                         HallDisplay.DisplayHall(show);
-                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser, show.Moviename, show.HallType, reservedChairs);
-                        List<Person> OldUserList = AccessData.ReadPersonJson();
-                        foreach (Person person in OldUserList)
+                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser.Name, show.Moviename, show.HallType, reservedChairInfos, totalCost, show.MovieStartDate, show.MovieEndDate);
+                        List<Person> userList = AccessData.ReadPersonJson();
+                        var currentUser = userList.FirstOrDefault(person => person.Email == ActiveUser.LoggedUser.Email); 
+
+                        if (currentUser != null)
                         {
-                            if (ActiveUser.LoggedUser.Name == person.Name)
-                            {
-                                person.Reservations.Add(userReservation);
-                                Console.WriteLine("Match found, user updated.");
-                            }
+                            currentUser.Reservations.Add(userReservation);
+                            AccessData.SyncUserWithJsonFile(currentUser);
+                            // Update ActiveUser.LoggedUser
+                            ActiveUser.LoggedUser = currentUser;                      
                         }
-                        string NewPersonJson = JsonConvert.SerializeObject(OldUserList, Formatting.Indented);
-                        string jsonFilePath2 = Path.Combine("Datasources", "Person.json"); // Datasource/Person.json
-                        File.WriteAllText(jsonFilePath2, NewPersonJson);
-
-
                         Console.WriteLine($"\nChair {selectedChairId} in Row {selectedRow} reserved successfully!");
                     }
                     else

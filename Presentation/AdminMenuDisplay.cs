@@ -14,7 +14,8 @@ class AdminMenuDisplay
             Console.WriteLine("3. Delete movies");
             Console.WriteLine("4. Edit ticket prices");
             Console.WriteLine("5. Edit movie information");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("6. View All Reservations");
+            Console.WriteLine("7. Exit");
 
             string choice = Console.ReadLine()!;
 
@@ -36,6 +37,9 @@ class AdminMenuDisplay
                     MovieEditDisplay.EditMovieInfo();
                     break;
                 case "6":
+                    ReservationInterface.DisplayAllReservations();
+                    break;
+                case "7":
                     exit = true;
                     Console.Clear();
                     break;
