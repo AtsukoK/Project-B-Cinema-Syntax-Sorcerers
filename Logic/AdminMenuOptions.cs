@@ -1,84 +1,72 @@
 using DataAccess;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
+
 class AdminOptions
 {
+    static string MoviesJsonFilePath = Path.Combine("DataSources", "MovieDataSource.json");
+
     public static void AddMovies()
     {
-        string dataFolderPath = "DataSources";
-        string jsonFilePath = Path.Combine(dataFolderPath, "MovieDataSource.json");
+        List<Movie> movies = AccessData.ReadMoviesJson();
 
-        string json = File.ReadAllText(jsonFilePath);
-
-        List<dynamic> movies = JsonConvert.DeserializeObject<List<dynamic>>(json)!;
-
-        var newMovie = new
-        {
-            title = ReadUserInput("Title: "),
-            duration = ReadUserInput("Duration : "),
-            genre = ReadUserInput("Genre: "),
-            description = ReadUserInput("Description: "),
-            rating = ReadUserInput("Rating: "),
-            showtimes = ReadUserInput("Showtimes: "),
-            cast = ReadUserInput("Cast: "),
-            director = ReadUserInput("Director: "),
-            price = double.Parse(ReadUserInput("Price: ")),
-            IsPlaying = true
-        };
+        var newMovie = new Movie(
+            ReadUserInput("Title: "),
+            ReadUserInput("Genre: "),
+            ReadUserInput("Director: "),
+            double.Parse(ReadUserInput("Rating: ")),
+            double.Parse(ReadUserInput("Price: ")),
+            ReadUserInput("Duration : "),
+            ReadUserInput("Description: "),
+            ReadUserInput("Showtimes: "),
+            ReadUserInput("Cast: "),
+            true
+        );
 
         movies.Add(newMovie);
 
         string updatedJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
 
-        File.WriteAllText(jsonFilePath, updatedJson);
+        File.WriteAllText(MoviesJsonFilePath, updatedJson);
 
         Console.WriteLine("\nMovie successfully added!\n");
-
     }
+
+
     private static string ReadUserInput(string userPrompt)
     {
         Console.Write(userPrompt);
         return Console.ReadLine()!;
     }
 
-
-
     public static void RemoveMovies()
     {
-        List<dynamic> movies = AccessData.JsonObjList();
+        List<Movie> movies = AccessData.ReadMoviesJson();
+
         Console.WriteLine("Enter movie title to remove: ");
         string adminPrompt = Console.ReadLine()!;
 
-        bool movieRemoved = false;
+        Movie? movieToRemove = movies.Find(movie => movie.Title == adminPrompt);
 
-        for (int i = 0; i < movies.Count; i++)
+        if (movieToRemove != null)
         {
-            if (movies[i]["title"] == adminPrompt)
-            {
-                movies.RemoveAt(i);
-                movieRemoved = true;
-                Console.WriteLine("Movie removed successfully.");
-                break;
-            }
+            movies.Remove(movieToRemove);
+            Console.WriteLine("Movie removed successfully.");
         }
-
-        if (!movieRemoved)
+        else
         {
             Console.WriteLine("Movie not found.");
         }
 
         string updatedJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
-        string jsonFilePath = AccessData.GetMoviesJsonFilePath();
-
-        File.WriteAllText(jsonFilePath, updatedJson);
-
+        File.WriteAllText(MoviesJsonFilePath, updatedJson);
     }
-
-
 
     public static void EditTicketPrices()
     {
-        List<dynamic> movies = AccessData.JsonObjList();
+        List<Movie> movies = AccessData.ReadMoviesJson();
 
         Console.WriteLine("Enter movie title to change price: ");
         string adminTitle = Console.ReadLine()!;
@@ -86,12 +74,12 @@ class AdminOptions
 
         for (int i = 0; i < movies.Count; i++)
         {
-            if (movies[i]["title"] == adminTitle)
+            if (movies[i].Title == adminTitle)
             {
                 Console.WriteLine("New price:");
                 double newPrice = Convert.ToDouble(Console.ReadLine());
 
-                movies[i]["price"] = newPrice;
+                movies[i].Price = newPrice;
                 priceChanged = true;
                 Console.WriteLine("Price changed successfully");
                 break;
@@ -104,8 +92,6 @@ class AdminOptions
         }
 
         string updatedJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
-        string jsonFilePath = AccessData.GetMoviesJsonFilePath();
-
-        File.WriteAllText(jsonFilePath, updatedJson);
+        File.WriteAllText(MoviesJsonFilePath, updatedJson);
     }
 }
