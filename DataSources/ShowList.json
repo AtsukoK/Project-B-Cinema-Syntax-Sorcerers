@@ -34,10 +34,31 @@
       {
         "ID": 2,
         "Price": 1.0,
-        "IsReserved": false,
+        "IsReserved": true,
         "Row": 1,
         "ChairInTheRow": 2,
-        "ReservedBy": null
+        "ReservedBy": {
+          "Name": "1",
+          "Reservations": [
+            {
+              "CustomerName": "1",
+              "MovieName": "Inception",
+              "Hall": 1,
+              "ChairInfoList": [
+                {
+                  "Row": 1,
+                  "ChairInTheRow": 1
+                }
+              ],
+              "totalCost": 12.99,
+              "MovieStartDate": "0001-01-01T00:00:00",
+              "MovieEndDate": "0001-01-01T00:00:00"
+            }
+          ],
+          "Email": "1",
+          "Password": "1",
+          "IsAdmin": false
+        }
       },
       {
         "ID": 3,
@@ -322,10 +343,16 @@
       {
         "ID": 30,
         "Price": 1.0,
-        "IsReserved": false,
+        "IsReserved": true,
         "Row": 4,
         "ChairInTheRow": 4,
-        "ReservedBy": null
+        "ReservedBy": {
+          "Name": "1",
+          "Reservations": [],
+          "Email": "1",
+          "Password": "1",
+          "IsAdmin": false
+        }
       },
       {
         "ID": 31,
@@ -474,10 +501,31 @@
       {
         "ID": 49,
         "Price": 1.0,
-        "IsReserved": false,
+        "IsReserved": true,
         "Row": 5,
         "ChairInTheRow": 11,
-        "ReservedBy": null
+        "ReservedBy": {
+          "Name": "1",
+          "Reservations": [
+            {
+              "CustomerName": "1",
+              "MovieName": "Inception",
+              "Hall": 1,
+              "ChairInfoList": [
+                {
+                  "Row": 4,
+                  "ChairInTheRow": 4
+                }
+              ],
+              "totalCost": 12.99,
+              "MovieStartDate": "1998-03-10T21:00:00",
+              "MovieEndDate": "1998-03-10T22:30:00"
+            }
+          ],
+          "Email": "1",
+          "Password": "1",
+          "IsAdmin": false
+        }
       },
       {
         "ID": 50,
@@ -949,7 +997,9 @@
               "MovieName": "Inception",
               "Hall": 1,
               "ChairInfoList": null,
-              "totalCost": 0.0
+              "totalCost": 0.0,
+              "MovieStartDate": "0001-01-01T00:00:00",
+              "MovieEndDate": "0001-01-01T00:00:00"
             }
           ],
           "Email": "1",
@@ -1128,10 +1178,16 @@
       {
         "ID": 128,
         "Price": 1.0,
-        "IsReserved": false,
+        "IsReserved": true,
         "Row": 12,
         "ChairInTheRow": 6,
-        "ReservedBy": null
+        "ReservedBy": {
+          "Name": "testuser",
+          "Reservations": [],
+          "Email": "defaultuser@sscinema.com",
+          "Password": "testuser",
+          "IsAdmin": false
+        }
       },
       {
         "ID": 129,

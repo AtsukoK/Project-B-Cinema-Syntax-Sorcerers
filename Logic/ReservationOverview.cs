@@ -76,7 +76,9 @@ class Reservation
                         double chairCost = Math.Round(movie.Price * selectedChair.Price, 2);
                         totalCost += chairCost;
                         HallDisplay.DisplayHall(show);
-                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser.Name, show.Moviename, show.HallType, reservedChairInfos, totalCost);
+                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser.Name, show.Moviename, show.HallType, reservedChairInfos, totalCost, show.MovieStartDate, show.MovieEndDate);
+                        Console.WriteLine($"Debug: Show Start Date - {show.MovieStartDate}");
+                        Console.WriteLine($"Debug: Show End Date - {show.MovieEndDate}");
                         List<Person> userList = AccessData.ReadPersonJson();
                         var currentUser = userList.FirstOrDefault(person => person.Email == ActiveUser.LoggedUser.Email); 
 

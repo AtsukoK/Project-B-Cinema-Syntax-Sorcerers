@@ -8,7 +8,22 @@
   },
   {
     "Name": "testuser",
-    "Reservations": [],
+    "Reservations": [
+      {
+        "CustomerName": "testuser",
+        "MovieName": "Inception",
+        "Hall": 1,
+        "ChairInfoList": [
+          {
+            "Row": 12,
+            "ChairInTheRow": 6
+          }
+        ],
+        "totalCost": 12.99,
+        "MovieStartDate": "1998-03-10T21:00:00",
+        "MovieEndDate": "1998-03-10T22:30:00"
+      }
+    ],
     "Email": "defaultuser@sscinema.com",
     "Password": "testuser",
     "IsAdmin": false
@@ -36,11 +51,27 @@
         "Hall": 1,
         "ChairInfoList": [
           {
-            "Row": 1,
-            "ChairInTheRow": 1
+            "Row": 4,
+            "ChairInTheRow": 4
           }
         ],
-        "totalCost": 12.99
+        "totalCost": 12.99,
+        "MovieStartDate": "1998-03-10T21:00:00",
+        "MovieEndDate": "1998-03-10T22:30:00"
+      },
+      {
+        "CustomerName": "1",
+        "MovieName": "Inception",
+        "Hall": 1,
+        "ChairInfoList": [
+          {
+            "Row": 5,
+            "ChairInTheRow": 11
+          }
+        ],
+        "totalCost": 12.99,
+        "MovieStartDate": "1998-03-10T21:00:00",
+        "MovieEndDate": "1998-03-10T22:30:00"
       }
     ],
     "Email": "1",

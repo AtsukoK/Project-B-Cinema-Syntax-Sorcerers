@@ -17,13 +17,17 @@ public class CheckOutObj
     public int Hall;
     public List<ChairInfo> ChairInfoList;  
     public double totalCost;
+    public DateTime MovieStartDate;
+    public DateTime MovieEndDate;
 
-    public CheckOutObj(string customerName, string moviename, int hall, List<ChairInfo> chairInfoList, double totalCost)
+    public CheckOutObj(string customerName, string moviename, int hall, List<ChairInfo> chairInfoList, double totalCost, DateTime movieStartDate, DateTime movieEndDate)
     {
         CustomerName = customerName;
         MovieName = moviename;
         Hall = hall;
         ChairInfoList = chairInfoList;
         this.totalCost = totalCost;
+        MovieStartDate = movieStartDate;
+        MovieEndDate = movieEndDate;
     }
 }

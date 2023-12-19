@@ -45,13 +45,14 @@ public class MainMenu
                 case "4":
                     if (ActiveUser.LoggedUser != null)
                     {
-                        AccessData.RefreshActiveUserData(); // Ensure data is fresh
                         ReservationInterface.DisplayUserReservations(ActiveUser.LoggedUser);
                     }
                     else
                     {
                         Console.WriteLine("No user is currently logged in.");
-                    } 
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+                    }
                     break;  
                 case "5":
                     exit = true;
