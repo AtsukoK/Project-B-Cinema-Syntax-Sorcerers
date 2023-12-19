@@ -24,6 +24,7 @@ class Reservation
     {
         List<Chair> allChairs = show.Chairs;
         List<Chair> reservedChairs = new List<Chair>();
+        List<ChairInfo> reservedChairInfos = new List<ChairInfo>();          
         double totalCost = 0;
 
         while (true)
@@ -66,13 +67,26 @@ class Reservation
                 if (selectedChair != null)
                 {
                     selectedChair.IsReserved = true;
+                    selectedChair.ReservedBy = ActiveUser.LoggedUser;
                     reservedChairs.Add(selectedChair);
-
+                    reservedChairInfos.Add(new ChairInfo(selectedRow, selectedChair.ChairInTheRow)); 
+                     
                     if (movie != null)
                     {
                         double chairCost = Math.Round(movie.Price * selectedChair.Price, 2);
                         totalCost += chairCost;
                         HallDisplay.DisplayHall(show);
+                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser.Name, show.Moviename, show.HallType, reservedChairInfos, totalCost);
+                        List<Person> userList = AccessData.ReadPersonJson();
+                        var currentUser = userList.FirstOrDefault(person => person.Email == ActiveUser.LoggedUser.Email); 
+
+                        if (currentUser != null)
+                        {
+                            currentUser.Reservations.Add(userReservation);
+                            AccessData.SyncUserWithJsonFile(currentUser);
+                            // Update ActiveUser.LoggedUser
+                            ActiveUser.LoggedUser = currentUser;                      
+                        }
                         Console.WriteLine($"\nChair {selectedChairId} in Row {selectedRow} reserved successfully!");
                     }
                     else

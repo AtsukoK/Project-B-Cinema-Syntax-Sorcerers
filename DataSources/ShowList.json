@@ -1,0 +1,1375 @@
+[
+  {
+    "Chairs": [
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 1,
+        "Price": 1.0,
+        "IsReserved": true,
+        "Row": 1,
+        "ChairInTheRow": 1,
+        "ReservedBy": {
+          "Name": "1",
+          "Reservations": [],
+          "Email": "1",
+          "Password": "1",
+          "IsAdmin": false
+        }
+      },
+      {
+        "ID": 2,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 3,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 4,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 5,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 6,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 7,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 8,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 1,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 9,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 10,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 11,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 12,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 13,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 14,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 15,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 16,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 2,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 17,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 18,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 19,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 20,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 21,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 22,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 23,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 24,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 25,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 26,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 3,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 27,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 28,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 29,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 30,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 31,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 32,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 33,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 34,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 35,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 36,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 37,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 11,
+        "ReservedBy": null
+      },
+      {
+        "ID": 38,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 4,
+        "ChairInTheRow": 12,
+        "ReservedBy": null
+      },
+      {
+        "ID": 39,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 40,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 41,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 42,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 43,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 44,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 45,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 46,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 47,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 48,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 49,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 11,
+        "ReservedBy": null
+      },
+      {
+        "ID": 50,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 5,
+        "ChairInTheRow": 12,
+        "ReservedBy": null
+      },
+      {
+        "ID": 51,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 52,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 53,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 54,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 55,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 56,
+        "Price": 1.1,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 57,
+        "Price": 1.1,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 58,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 59,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 60,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 61,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 11,
+        "ReservedBy": null
+      },
+      {
+        "ID": 62,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 6,
+        "ChairInTheRow": 12,
+        "ReservedBy": null
+      },
+      {
+        "ID": 63,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 64,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 65,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 66,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 67,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 68,
+        "Price": 1.1,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 69,
+        "Price": 1.1,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 70,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 71,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 72,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 73,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 11,
+        "ReservedBy": null
+      },
+      {
+        "ID": 74,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 7,
+        "ChairInTheRow": 12,
+        "ReservedBy": null
+      },
+      {
+        "ID": 75,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 76,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 77,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 78,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 79,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 80,
+        "Price": 1.1,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 81,
+        "Price": 1.1,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 82,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 83,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 84,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 85,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 11,
+        "ReservedBy": null
+      },
+      {
+        "ID": 86,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 8,
+        "ChairInTheRow": 12,
+        "ReservedBy": null
+      },
+      {
+        "ID": 87,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 88,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 89,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 90,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 91,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 92,
+        "Price": 1.1,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 93,
+        "Price": 1.1,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 94,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 95,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 96,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 97,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 11,
+        "ReservedBy": null
+      },
+      {
+        "ID": 98,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 9,
+        "ChairInTheRow": 12,
+        "ReservedBy": null
+      },
+      {
+        "ID": 99,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 100,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 101,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 102,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 103,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 104,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 105,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 106,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 107,
+        "Price": 1.0,
+        "IsReserved": true,
+        "Row": 10,
+        "ChairInTheRow": 9,
+        "ReservedBy": {
+          "Name": "1",
+          "Reservations": [
+            {
+              "CustomerName": null,
+              "MovieName": "Inception",
+              "Hall": 1,
+              "ChairInfoList": null,
+              "totalCost": 0.0
+            }
+          ],
+          "Email": "1",
+          "Password": "1",
+          "IsAdmin": false
+        }
+      },
+      {
+        "ID": 108,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 109,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 11,
+        "ReservedBy": null
+      },
+      {
+        "ID": 110,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 10,
+        "ChairInTheRow": 12,
+        "ReservedBy": null
+      },
+      {
+        "ID": 111,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 112,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 113,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 114,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 115,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 116,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 117,
+        "Price": 1.05,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 118,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 119,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 120,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 121,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 11,
+        "ReservedBy": null
+      },
+      {
+        "ID": 122,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 11,
+        "ChairInTheRow": 12,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 123,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 124,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 125,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 126,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 127,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 128,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 129,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 130,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 131,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 132,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 12,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 133,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 134,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 135,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 136,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 137,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 138,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 139,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 140,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 141,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 9,
+        "ReservedBy": null
+      },
+      {
+        "ID": 142,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 10,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 13,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 143,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 1,
+        "ReservedBy": null
+      },
+      {
+        "ID": 144,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 2,
+        "ReservedBy": null
+      },
+      {
+        "ID": 145,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 3,
+        "ReservedBy": null
+      },
+      {
+        "ID": 146,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 4,
+        "ReservedBy": null
+      },
+      {
+        "ID": 147,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 5,
+        "ReservedBy": null
+      },
+      {
+        "ID": 148,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 6,
+        "ReservedBy": null
+      },
+      {
+        "ID": 149,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 7,
+        "ReservedBy": null
+      },
+      {
+        "ID": 150,
+        "Price": 1.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 8,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      },
+      {
+        "ID": 0,
+        "Price": 0.0,
+        "IsReserved": false,
+        "Row": 14,
+        "ChairInTheRow": 99,
+        "ReservedBy": null
+      }
+    ],
+    "Moviename": "Inception",
+    "ChairsFileName": "Inception-19980310_210000-hall1.json",
+    "MovieStartDate": "1998-03-10T21:00:00",
+    "MovieEndDate": "1998-03-10T22:30:00",
+    "HallType": 1
+  }
+]

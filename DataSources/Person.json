@@ -1,44 +1,57 @@
 [
   {
-    "Email": "",
     "Name": "",
+    "Reservations": [],
+    "Email": "",
     "Password": "",
-    "IsAdmin": false,
-    "Reservations": []
+    "IsAdmin": false
   },
   {
-    "Email": "defaultuser@sscinema.com",
     "Name": "testuser",
+    "Reservations": [],
+    "Email": "defaultuser@sscinema.com",
     "Password": "testuser",
-    "IsAdmin": false,
-    "Reservations": []
+    "IsAdmin": false
   },
   {
-    "Email": "admin@sscinema.com",
     "Name": "admin",
+    "Reservations": [],
+    "Email": "admin@sscinema.com",
     "Password": "admin1234!",
-    "IsAdmin": true,
-    "Reservations": []
+    "IsAdmin": true
   },
   {
-    "Email": "sara44@hotmail.com",
     "Name": "sara44",
+    "Reservations": [],
+    "Email": "sara44@hotmail.com",
     "Password": "s@raHi346",
-    "IsAdmin": false,
-    "Reservations": []
+    "IsAdmin": false
   },
   {
-    "Email": "1",
     "Name": "1",
+    "Reservations": [
+      {
+        "CustomerName": "1",
+        "MovieName": "Inception",
+        "Hall": 1,
+        "ChairInfoList": [
+          {
+            "Row": 1,
+            "ChairInTheRow": 1
+          }
+        ],
+        "totalCost": 12.99
+      }
+    ],
+    "Email": "1",
     "Password": "1",
-    "IsAdmin": false,
-    "Reservations": []
+    "IsAdmin": false
   },
   {
-    "Email": "2",
     "Name": "2",
+    "Reservations": [],
+    "Email": "2",
     "Password": "2",
-    "IsAdmin": true,
-    "Reservations": []
+    "IsAdmin": true
   }
 ]

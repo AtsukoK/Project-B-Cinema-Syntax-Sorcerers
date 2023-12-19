@@ -1,4 +1,5 @@
 using DataAccess;
+using Logic;
 public class MainMenu
 {
     public static void Start()
@@ -27,7 +28,8 @@ public class MainMenu
             Console.WriteLine("1. View available movies");
             Console.WriteLine("2. Search movies");
             Console.WriteLine("3. Purchase movie tickets");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. View your Reservation(s)");
+            Console.WriteLine("5. Exit");
             string choice = Console.ReadLine()!;
             switch (choice)
             {
@@ -41,6 +43,17 @@ public class MainMenu
                     Reservation.View();
                     break;
                 case "4":
+                    if (ActiveUser.LoggedUser != null)
+                    {
+                        AccessData.RefreshActiveUserData(); // Ensure data is fresh
+                        ReservationInterface.DisplayUserReservations(ActiveUser.LoggedUser);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No user is currently logged in.");
+                    } 
+                    break;  
+                case "5":
                     exit = true;
                     break;
             }
