@@ -64,7 +64,13 @@ class Reservation
                 break;
             }
 
-            int selectedRow = int.Parse(selectedRowInput);
+            if (!int.TryParse(selectedRowInput, out int selectedRow) || selectedRow <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"\nInvalid row number. Please enter a valid row number.");
+                Console.ResetColor();
+                continue;
+            }
 
             if (!allChairs.Any(chair => chair.Row == selectedRow))
             {
@@ -87,9 +93,13 @@ class Reservation
                 {
                     break;
                 }
-                else
-                {
 
+                if (!int.TryParse(selectedChairId, out int chairId) || chairId <= 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"\nInvalid chair number. Please enter a valid chair number.");
+                    Console.ResetColor();
+                    continue;
                 }
 
                 Chair selectedChair = availableChairsInRow.Find(chair => chair.ChairInTheRow == int.Parse(selectedChairId))!;
@@ -163,6 +173,7 @@ class Reservation
         string jsonFile = Path.Combine("Datasources", "ShowList.json");
         File.WriteAllText(jsonFile, updatedJsonFile);
     }
+
 
 
 }
