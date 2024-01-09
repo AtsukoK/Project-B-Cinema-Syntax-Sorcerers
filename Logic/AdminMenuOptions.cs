@@ -44,23 +44,50 @@ class AdminOptions
     public static void RemoveMovies()
     {
         List<Movie> movies = AccessData.ReadMoviesJson();
-        Console.WriteLine("Enter movie title to remove: ");
+        List<Show> shows = AccessData.ReadShowsJson();
+        Console.Clear();
+        foreach (Movie mov in movies)
+        {
+            Console.WriteLine(mov.Title);
+        }
+
+        Console.WriteLine("\nEnter movie title to remove: ");
         string adminPrompt = Console.ReadLine()!;
+        bool removMovie = false;
 
         Movie? movieToRemove = movies.Find(movie => movie.Title == adminPrompt);
 
         if (movieToRemove != null)
         {
+            removMovie = true;
             movies.Remove(movieToRemove);
             Console.WriteLine("Movie removed successfully.");
+            Thread.Sleep(1500);
         }
         else
         {
             Console.WriteLine("Movie not found.");
+            Thread.Sleep(1500);
         }
 
         string updatedJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
         File.WriteAllText(MoviesJsonFilePath, updatedJson);
+        List<Show> showsToRemove = shows.Where(show => show.Moviename == adminPrompt).ToList();
+        foreach (var showToRemove in showsToRemove)
+        {
+            shows.Remove(showToRemove);
+            Console.WriteLine($"Show for {adminPrompt} removed successfully.");
+            Thread.Sleep(1500);
+        }
+
+        if (removMovie)
+        {
+            string moviesJson = JsonConvert.SerializeObject(movies, Formatting.Indented);
+            File.WriteAllText(Path.Combine("Datasources", "MovieDataSource.json"), moviesJson);
+
+            string showsJson = JsonConvert.SerializeObject(shows, Formatting.Indented);
+            File.WriteAllText(Path.Combine("Datasources", "ShowList.json"), showsJson);
+        }
     }
 
     public static void EditTicketPrices()
