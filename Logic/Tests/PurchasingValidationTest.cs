@@ -2,7 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 
-namespace Logic.Tests
+namespace ProjectB.Cinema.Tests
 {
     [TestClass]
     public class PurchasingValidationTests
