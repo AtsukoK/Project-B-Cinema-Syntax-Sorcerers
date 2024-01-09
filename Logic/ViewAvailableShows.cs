@@ -60,12 +60,28 @@ class Viewer
 
     }
 
-    public static Show SelectShow(int selection)
+    public static Show? SelectShow(int selection)
     {
         List<Show> Shows = AccessData.ReadShowsJson();
-        Show SelectedShow = null;
+        Show? SelectedShow = null;
+        int totalShows = Shows.Count;
 
-        SelectedShow = Shows[selection - 1];
+        //error handling for the case a number out of range of the shows in thw input
+        try
+        {
+            if (selection < 1 || selection > totalShows)
+            {
+                Console.WriteLine("Invalid show number. Please enter a valid show number.");
+            }
+            else
+            {
+                SelectedShow = Shows[selection - 1];
+            }
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            Console.WriteLine("Invalid show number. Please enter a valid show number.");
+        }
         return SelectedShow;
     }
 }
