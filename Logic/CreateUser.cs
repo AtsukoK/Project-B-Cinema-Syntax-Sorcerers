@@ -23,6 +23,7 @@ namespace Logic
                 Console.Write("Name invalid or taken: ");
                 name = Console.ReadLine();
             }
+            Console.WriteLine("Password must be at least 8 characters long, contain at least 1 uppercase letter, 1 digit and 1 special character.");
             Console.Write("Password: ");
             string password = "";
             ConsoleKeyInfo key;
@@ -69,11 +70,11 @@ namespace Logic
                 passwordValidationResult = AccountValidation.ValidatePassword(password);
             }
 
-            Console.WriteLine("Phone number (optional): ");
+            Console.WriteLine("\nPhone number (optional) press ENTER to skip: ");
             string phone = Console.ReadLine();
             while (!AccountValidation.ValidatePhone(phone))
             {
-                Console.Write("Invalid phone number (optional): ");
+                Console.Write("\nInvalid phone number (optional): ");
                 phone = Console.ReadLine();
             }
 
@@ -85,7 +86,9 @@ namespace Logic
             string updatedJson = JsonConvert.SerializeObject(PersonList, Formatting.Indented);
             string jsonFilePath = Path.Combine("Datasources", "Person.json"); // Datasource/Person.json
             File.WriteAllText(jsonFilePath, updatedJson);
-            Console.WriteLine("Account created successfully!");
+            Console.WriteLine("\nAccount created successfully!");
+
+            Menu.LoginMenu();
 
         }
     }

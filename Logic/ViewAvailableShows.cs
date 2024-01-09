@@ -53,7 +53,7 @@ class Viewer
 
         foreach (Show show in Shows)
         {
-            Console.WriteLine($"[SHOW {IndexNumber}] 'Movie:{show.Moviename}' Starts at {show.MovieStartDate}         End at {show.MovieEndDate}");
+            Console.WriteLine($"{IndexNumber}. 'Movie:{show.Moviename}' Starts at {show.MovieStartDate}         End at {show.MovieEndDate}");
             IndexNumber++;
         }
 

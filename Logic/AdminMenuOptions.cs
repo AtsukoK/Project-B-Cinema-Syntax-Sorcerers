@@ -44,7 +44,6 @@ class AdminOptions
     public static void RemoveMovies()
     {
         List<Movie> movies = AccessData.ReadMoviesJson();
-
         Console.WriteLine("Enter movie title to remove: ");
         string adminPrompt = Console.ReadLine()!;
 
@@ -67,8 +66,13 @@ class AdminOptions
     public static void EditTicketPrices()
     {
         List<Movie> movies = AccessData.ReadMoviesJson();
-
-        Console.WriteLine("Enter movie title to change price: ");
+        Console.Clear();
+        Console.WriteLine("Available movies:\n");
+        foreach (Movie mov in movies)
+        {
+            Console.WriteLine(mov.Title);
+        }
+        Console.WriteLine("\nEnter movie title to change price: ");
         string adminTitle = Console.ReadLine()!;
         bool priceChanged = false;
 
@@ -82,6 +86,8 @@ class AdminOptions
                 movies[i].Price = newPrice;
                 priceChanged = true;
                 Console.WriteLine("Price changed successfully");
+                Thread.Sleep(2000);
+                Console.Clear();
                 break;
             }
         }

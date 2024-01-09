@@ -86,27 +86,27 @@ public static class AccountValidation
         // Validate password
         if (string.IsNullOrEmpty(password) || password.Length < 8)
         {
-            return "Password must be at least 8 characters long.";
+            return "\nPassword must be at least 8 characters long.";
         }
 
         if (!password.Any(char.IsUpper))
         {
-            return "Password must contain at least one uppercase letter.";
+            return "\nPassword must contain at least one uppercase letter.";
         }
 
         if (!password.Any(char.IsLower))
         {
-            return "Password must contain at least one lowercase letter.";
+            return "\nPassword must contain at least one lowercase letter.";
         }
 
         if (!password.Any(char.IsDigit))
         {
-            return "Password must contain at least one digit.";
+            return "\nPassword must contain at least one digit.";
         }
 
         if (!password.Any(c => !char.IsLetterOrDigit(c)))
         {
-            return "Password must contain at least one special character.";
+            return "\nPassword must contain at least one special character.";
         }
 
         return null; // Password is valid

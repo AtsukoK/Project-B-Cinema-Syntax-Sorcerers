@@ -39,7 +39,9 @@ public class Menu
                     do
                     {
                         Console.Clear();
-                        Console.Write("Enter your email: ");
+                        Console.WriteLine(cinemaLogo);
+                        Console.WriteLine("_______________________________________________________________________");
+                        Console.Write("\nEnter your email: ");
                         string userEmail = Console.ReadLine()!;
 
                         string userPassword = MaskPassword();
@@ -69,8 +71,7 @@ public class Menu
                             string userInput = Console.ReadLine()!;
                             if (userInput?.ToLower() == "exit")
                             {
-                                exit = true;
-                                break; // Exit the loop and go back to the main menu
+                                break;
                             }
                         }
                     } while (!loginSuccess);
