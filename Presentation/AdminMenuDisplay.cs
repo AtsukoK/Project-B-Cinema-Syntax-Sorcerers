@@ -42,7 +42,7 @@ class AdminMenuDisplay
                 case "7":
                     exit = true;
                     Console.Clear();
-                    break;
+                    return;
             }
         }
     }

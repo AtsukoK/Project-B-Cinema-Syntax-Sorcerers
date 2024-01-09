@@ -5,7 +5,7 @@ namespace DataAccess
         public static void SearchMoviesByName()
         {
             Console.Clear();
-            Console.WriteLine("Enter the name or part of the name of the movie you're looking for:");
+            Console.WriteLine("Enter the genre, name or part of the name of the movie you're looking for:");
             string movieName = Console.ReadLine();
 
             if (movieName is not null) // if movieName is not null, continue
@@ -34,7 +34,7 @@ namespace DataAccess
                     else if (input == "n")
                     {
                         Console.WriteLine("Returning to the main menu.");
-                        MainMenu.Start();
+                        // MainMenu.Start();
                     }
                     else
                     {
@@ -96,7 +96,6 @@ namespace DataAccess
             }
             else if (returnInput == "n")
             {
-                Console.WriteLine("Leaving the program, bye!");
                 Environment.Exit(0);
             }
             else

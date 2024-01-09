@@ -4,7 +4,7 @@ using Logic;
 class ReservationInterface
 {
 
-public static void DisplayUserReservations(Person loggedUser)
+    public static void DisplayUserReservations(Person loggedUser)
     {
         Person refreshedUser = AccessData.GetUserByEmail(loggedUser.Email);
         if (refreshedUser != null)
@@ -44,7 +44,7 @@ public static void DisplayUserReservations(Person loggedUser)
         Console.ReadKey();
     }
 
- public static void DisplayAllReservations()
+    public static void DisplayAllReservations()
     {
         List<Person> allUsers = AccessData.ReadPersonJson();
 

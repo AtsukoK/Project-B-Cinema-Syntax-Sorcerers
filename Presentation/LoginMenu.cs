@@ -39,7 +39,9 @@ public class Menu
                     do
                     {
                         Console.Clear();
-                        Console.Write("Enter your email: ");
+                        Console.WriteLine(cinemaLogo);
+                        Console.WriteLine("_______________________________________________________________________");
+                        Console.Write("\nEnter your email: ");
                         string userEmail = Console.ReadLine()!;
 
                         string userPassword = MaskPassword();
@@ -49,6 +51,7 @@ public class Menu
                         {
                             if (loggedInUser.IsAdmin)
                             {
+                                loginSuccess = true;
                                 AdminMenuDisplay.View();
                             }
                             else
@@ -69,8 +72,7 @@ public class Menu
                             string userInput = Console.ReadLine()!;
                             if (userInput?.ToLower() == "exit")
                             {
-                                exit = true;
-                                break; // Exit the loop and go back to the main menu
+                                break;
                             }
                         }
                     } while (!loginSuccess);
@@ -83,7 +85,7 @@ public class Menu
 
                     break;
                 case "3":
-                    exit = true; // Exit the menu
+                    exit = true;  //  // Exit the menu
                     break;
                 default:
                     Console.WriteLine("Invalid option. Please enter 1, 2, or 3.");
