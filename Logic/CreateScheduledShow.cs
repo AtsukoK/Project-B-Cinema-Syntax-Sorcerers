@@ -13,7 +13,12 @@ class Schedule
     {
         do
         {
-            Console.Write("Enter Movie Title: ");
+            List<Movie> movies = AccessData.ReadMoviesJson();
+            foreach (Movie mov in movies)
+            {
+                Console.WriteLine(mov.Title);
+            }
+            Console.Write("\nEnter Movie Title: ");
             String selection = Console.ReadLine();
             List<string> listMoviesString = new();
             List<Movie> Movielist = AccessData.ReadMoviesJson();
@@ -30,9 +35,9 @@ class Schedule
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Wrong movie input, please try again.");
-                Thread.Sleep(3000);
+                Thread.Sleep(1000);
                 Console.ResetColor();
-                ScheduleMovieName();
+                // ScheduleMovieName();
             }
         } while (true);
     }
@@ -60,7 +65,8 @@ class Schedule
     public static void CreateShow()
     {
         //Get Movie Name first
-        Console.WriteLine("Enter movie name for which you want to create a scheduled show:");
+        Console.Clear();
+        Console.WriteLine("Enter movie name for which you want to create a scheduled show:\n");
         string MovieName = ScheduleMovieName();
 
         DateTime StartDate = GetDateTime();
