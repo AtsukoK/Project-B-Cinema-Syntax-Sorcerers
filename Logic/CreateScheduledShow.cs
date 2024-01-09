@@ -37,7 +37,6 @@ class Schedule
                 Console.WriteLine("Wrong movie input, please try again.");
                 Thread.Sleep(1000);
                 Console.ResetColor();
-                // ScheduleMovieName();
             }
         } while (true);
     }

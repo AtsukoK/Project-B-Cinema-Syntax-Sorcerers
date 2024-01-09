@@ -51,6 +51,7 @@ public class Menu
                         {
                             if (loggedInUser.IsAdmin)
                             {
+                                loginSuccess = true;
                                 AdminMenuDisplay.View();
                             }
                             else
@@ -84,7 +85,7 @@ public class Menu
 
                     break;
                 case "3":
-                    exit = true; // Exit the menu
+                    exit = true;  //  // Exit the menu
                     break;
                 default:
                     Console.WriteLine("Invalid option. Please enter 1, 2, or 3.");
