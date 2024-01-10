@@ -69,8 +69,15 @@ class Schedule
         string MovieName = ScheduleMovieName();
 
         DateTime StartDate = GetDateTime();
+        List<Movie> MoviesList = AccessData.ReadMoviesJson();
+        int lengthinminutes = 0;
+        foreach (Movie movie in MoviesList)
+        {
+            if (movie.Title == MovieName)
+                lengthinminutes = movie.LengthInMinutes;
+        }
 
-        DateTime EndDate = GetDateTime();
+        DateTime EndDate = StartDate.AddMinutes(lengthinminutes);
 
         string filenameDateTimeString = StartDate.ToString("yyyyMMdd_HHmmss");
         string finalName = $"{MovieName}-{filenameDateTimeString}";

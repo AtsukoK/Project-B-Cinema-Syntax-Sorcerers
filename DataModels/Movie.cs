@@ -7,9 +7,10 @@ public class Movie
     public double Price { get; set; }
     public string Duration { get; set; }
     public string Description { get; set; }
-    public string Showtimes { get; set; }  
-    public string Cast { get; set; }       
-    public bool IsPlaying { get; set; }    
+    public string Showtimes { get; set; }
+    public string Cast { get; set; }
+    public bool IsPlaying { get; set; }
+    public int LengthInMinutes { get; set; }
 
     public Movie(string title, string genre, string director, double rating, double price, string duration, string description, string showtimes, string cast, bool isPlaying)
     {
