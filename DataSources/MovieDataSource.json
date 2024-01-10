@@ -9,7 +9,8 @@
     "cast": "John Travolta, Samuel L. Jackson, Uma Thurman",
     "director": "Quentin Tarantino",
     "price": 12.99,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 154
   },
   {
     "title": "The Shawshank Redemption",
@@ -21,7 +22,8 @@
     "cast": "Tim Robbins, Morgan Freeman, Bob Gunton",
     "director": "Frank Darabont",
     "price": 12.5,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 144
   },
   {
     "title": "The Godfather",
@@ -33,7 +35,8 @@
     "cast": "Marlon Brando, Al Pacino, James Caan",
     "director": "Francis Ford Coppola",
     "price": 13.5,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 175
   },
   {
     "title": "Inception",
@@ -45,7 +48,8 @@
     "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
     "director": "Christopher Nolan",
     "price": 12.99,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 148
   },
   {
     "title": "Forrest Gump",
@@ -57,7 +61,8 @@
     "cast": "Tom Hanks, Robin Wright, Gary Sinise",
     "director": "Robert Zemeckis",
     "price": 12.5,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 144
   },
   {
     "title": "Titanic",
@@ -69,7 +74,8 @@
     "cast": "Leonardo DiCaprio, Kate Winslet, Billy Zane",
     "director": "James Cameron",
     "price": 13.0,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 195
   },
   {
     "title": "Jurassic Park",
@@ -81,7 +87,8 @@
     "cast": "Sam Neill, Laura Dern, Jeff Goldblum",
     "director": "Steven Spielberg",
     "price": 12.75,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 127
   },
   {
     "title": "The Dark Knight",
@@ -93,7 +100,8 @@
     "cast": "Christian Bale, Heath Ledger, Aaron Eckhart",
     "director": "Christopher Nolan",
     "price": 13.25,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 152
   },
   {
     "title": "The Matrix",
@@ -105,6 +113,7 @@
     "cast": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
     "director": "Lana Wachowski, Lilly Wachowski",
     "price": 12.9,
-    "IsPlaying": true
+    "IsPlaying": true,
+    "LengthInMinutes": 136
   }
 ]
