@@ -46,133 +46,119 @@ class Reservation
         }
     }
 
-    public static void ReserveChair(Show show, Movie movie, int choice)
+public static void ReserveChair(Show show, Movie movie, int choice)
+{
+    List<Chair> allChairs = show.Chairs;
+    List<Chair> reservedChairs = new List<Chair>();
+    double totalCost = 0;
+
+    while (true)
     {
-        List<Chair> allChairs = show.Chairs;
-        List<Chair> reservedChairs = new List<Chair>();
-        List<ChairInfo> reservedChairInfos = new List<ChairInfo>();
-        double totalCost = 0;
+        Console.WriteLine("\nEnter the row number OR type 'done' to finish:");
+        string selectedRowInput = Console.ReadLine()!;
 
-        while (true)
+        if (selectedRowInput.ToLower() == "done")
         {
-            Console.WriteLine("\nEnter the row number OR type 'done' to finish:");
-            string selectedRowInput = Console.ReadLine()!;
-
-            if (selectedRowInput.ToLower() == "done")
+            if (reservedChairs.Any())
             {
-                Console.Clear();
-                break;
-            }
+                List<ChairInfo> reservedChairInfos = reservedChairs.Select(chair => new ChairInfo(chair.Row, chair.ChairInTheRow)).ToList();
+                CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser.Name, show.Moviename, show.HallType, reservedChairInfos, totalCost, show.MovieStartDate, show.MovieEndDate);
 
-            if (!int.TryParse(selectedRowInput, out int selectedRow) || selectedRow <= 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\nInvalid row number. Please enter a valid row number.");
-                Console.ResetColor();
-                continue;
-            }
-
-            if (!allChairs.Any(chair => chair.Row == selectedRow))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\nInvalid row number {selectedRow}. Please enter a valid row number.");
-                Console.ResetColor();
-                continue;
-            }
-
-            List<Chair> availableChairsInRow = allChairs
-                .Where(chair => chair.Row == selectedRow && !chair.IsReserved)
-                .ToList();
-
-            if (availableChairsInRow.Count > 0)
-            {
-                Console.WriteLine("\nEnter the number of the chair you want to reserve OR type 'done' to finish:");
-                string selectedChairId = Console.ReadLine()!;
-
-                if (selectedChairId.ToLower() == "done")
+                List<Person> userList = AccessData.ReadPersonJson();
+                var currentUser = userList.FirstOrDefault(person => person.Email == ActiveUser.LoggedUser.Email);
+                if (currentUser != null)
                 {
-                    break;
+                    currentUser.Reservations.Add(userReservation);
+                    AccessData.SyncUserWithJsonFile(currentUser);
+                    ActiveUser.LoggedUser = currentUser;
                 }
 
-                if (!int.TryParse(selectedChairId, out int chairId) || chairId <= 0)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"\nInvalid chair number. Please enter a valid chair number.");
-                    Console.ResetColor();
-                    continue;
-                }
-
-                Chair selectedChair = availableChairsInRow.Find(chair => chair.ChairInTheRow == int.Parse(selectedChairId))!;
-
-                if (selectedChair != null)
-                {
-                    selectedChair.IsReserved = true;
-                    selectedChair.ReservedBy = ActiveUser.LoggedUser;
-                    reservedChairs.Add(selectedChair);
-                    reservedChairInfos.Add(new ChairInfo(selectedRow, selectedChair.ChairInTheRow));
-
-                    if (movie != null)
-                    {
-                        double chairCost = Math.Round(movie.Price * selectedChair.Price, 2);
-                        totalCost += chairCost;
-                        HallDisplay.DisplayHall(show);
-                        CheckOutObj userReservation = new CheckOutObj(ActiveUser.LoggedUser.Name, show.Moviename, show.HallType, reservedChairInfos, totalCost, show.MovieStartDate, show.MovieEndDate);
-                        List<Person> userList = AccessData.ReadPersonJson();
-                        var currentUser = userList.FirstOrDefault(person => person.Email == ActiveUser.LoggedUser.Email);
-
-                        if (currentUser != null)
-                        {
-                            currentUser.Reservations.Add(userReservation);
-                            AccessData.SyncUserWithJsonFile(currentUser);
-                            // Update ActiveUser.LoggedUser
-                            ActiveUser.LoggedUser = currentUser;
-                        }
-                        Console.WriteLine($"\nChair {selectedChairId} in Row {selectedRow} reserved successfully!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error: Movie information not available.");
-                    }
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nInvalid chair number. Please select an available chair.");
-                    Console.ResetColor();
-                }
+                // Clear the reservedChairs list for the next reservation process
+                reservedChairs.Clear();
             }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"\nNo available chairs in Row {selectedRow}. Please select another row.");
-                Console.ResetColor();
-            }
+
+            Console.Clear();
+            break;
         }
 
-        string formattedNumber = totalCost.ToString("F2");
-        Console.WriteLine($"\nTotal cost: €{formattedNumber}\n");
-        PurchasingMenu.View();
-
-        string updatedJson = JsonConvert.SerializeObject(allChairs, Formatting.Indented);
-        Show newShow = show;
-        List<Show> shows = AccessData.ReadShowsJson();
-
-        if (choice - 1 >= 0 && choice - 1 < shows.Count)
+        if (!int.TryParse(selectedRowInput, out int selectedRow) || !allChairs.Any(chair => chair.Row == selectedRow))
         {
-            shows[choice - 1] = newShow;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"\nInvalid row number {selectedRowInput}. Please enter a valid row number.");
+            Console.ResetColor();
+            continue;
+        }
+
+        List<Chair> availableChairsInRow = allChairs.Where(chair => chair.Row == selectedRow && !chair.IsReserved).ToList();
+        if (availableChairsInRow.Count == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"\nNo available chairs in Row {selectedRow}. Please select another row.");
+            Console.ResetColor();
+            continue;
+        }
+
+        Console.WriteLine("\nEnter the number of the chair you want to reserve OR type 'done' to finish:");
+        string selectedChairId = Console.ReadLine()!;
+
+        if (selectedChairId.ToLower() == "done")
+        {
+            continue;
+        }
+
+        if (!int.TryParse(selectedChairId, out int chairId) || chairId <= 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"\nInvalid chair number. Please enter a valid chair number.");
+            Console.ResetColor();
+            continue;
+        }
+
+        Chair selectedChair = availableChairsInRow.Find(chair => chair.ChairInTheRow == chairId);
+        if (selectedChair != null)
+        {
+            selectedChair.IsReserved = true;
+            selectedChair.ReservedBy = ActiveUser.LoggedUser;
+            reservedChairs.Add(selectedChair);
+
+            double chairCost = Math.Round(movie.Price * selectedChair.Price, 2);
+            totalCost += chairCost;
+            Console.Clear();
+            HallDisplay.DisplayHall(show);
+            Console.WriteLine($"\nChair {selectedChairId} in Row {selectedRow} reserved successfully!");
+            Console.WriteLine($"Running Total Cost: €{totalCost:F2}");
         }
         else
         {
-            Console.WriteLine("Invalid show selection.");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\nInvalid chair number. Please select an available chair.");
+            Console.ResetColor();
         }
-
-        string jsonFilePath = Path.Combine("Datasources", show.ChairsFileName);
-        File.WriteAllText(jsonFilePath, updatedJson);
-
-        string updatedJsonFile = JsonConvert.SerializeObject(shows, Formatting.Indented);
-        string jsonFile = Path.Combine("Datasources", "ShowList.json");
-        File.WriteAllText(jsonFile, updatedJsonFile);
     }
+
+    string formattedNumber = totalCost.ToString("F2");
+    Console.WriteLine($"\nTotal cost: €{formattedNumber}\n");
+    PurchasingMenu.View();
+
+    string updatedJson = JsonConvert.SerializeObject(allChairs, Formatting.Indented);
+    Show newShow = show;
+    List<Show> shows = AccessData.ReadShowsJson();
+    if (choice - 1 >= 0 && choice - 1 < shows.Count)
+    {
+        shows[choice - 1] = newShow;
+    }
+    else
+    {
+        Console.WriteLine("Invalid show selection.");
+    }
+
+    string jsonFilePath = Path.Combine("Datasources", show.ChairsFileName);
+    File.WriteAllText(jsonFilePath, updatedJson);
+
+    string updatedJsonFile = JsonConvert.SerializeObject(shows, Formatting.Indented);
+    string jsonFile = Path.Combine("Datasources", "ShowList.json");
+    File.WriteAllText(jsonFile, updatedJsonFile);
+}
 
 
 
