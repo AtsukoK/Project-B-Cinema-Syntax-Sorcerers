@@ -144,5 +144,3 @@ namespace ProjectB.Cinema.Tests
         // naam => whitespace => niet valid
     }
 }
-
-
